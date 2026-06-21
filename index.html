@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aureus Family Office | Private Family Office — Lehigh Valley, PA</title>
+  <meta name="description" content="Aureus Family Office is a private family office serving affluent families who desire privacy and appreciate luxury. Lehigh Valley, Pennsylvania." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Aureus Family Office" />
+  <meta property="og:description" content="A private family office designed for families that desire peace of mind." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.aureus-fo.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       DESIGN TOKENS
+    ============================================ */
+    :root {
+      --navy:       #0A1628;
+      --navy-mid:   #0E1D30;
+      --navy-lt:    #162540;
+      --navy-card:  #111E32;
+      --gold:       #B8965A;
+      --gold-lt:    #CDA96E;
+      --gold-dim:   rgba(184, 150, 90, 0.18);
+      --gold-rule:  rgba(184, 150, 90, 0.2);
+      --cream:      #F0EDE6;
+      --cream-dim:  #A8A49D;
+      --serif:      'Cormorant Garamond', 'Times New Roman', serif;
+      --sans:       'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    /* ============================================
+       BASE RESET
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    nav {
+      position: fixed;
+      inset-block-start: 0;
+      inset-inline: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3.5rem;
+      background: rgba(10, 22, 40, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-rule);
+      transition: padding 0.3s ease;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .nav-logo em {
+      font-style: italic;
+      color: var(--gold);
+      margin-right: 0.25em;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .nav-link {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--cream); }
+    .nav-cta {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(184, 150, 90, 0.45);
+      padding: 0.55rem 1.5rem;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 9rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 110%, rgba(184, 150, 90, 0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 100% 40% at 50% -10%, rgba(22, 37, 64, 0.8) 0%, transparent 80%);
+      pointer-events: none;
+    }
+    /* Subtle grid texture */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(184,150,90,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,90,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+    .hero-wordmark {
+      font-family: var(--serif);
+      font-size: clamp(4.5rem, 12vw, 10rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 0.9;
+      color: var(--cream);
+      margin-bottom: 0.2em;
+    }
+    .hero-wordmark em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      margin-bottom: 3.5rem;
+    }
+    .hero-rule {
+      width: 1px;
+      height: 4rem;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      margin: 0 auto 3rem;
+      opacity: 0.5;
+    }
+    .hero-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.35rem, 3.5vw, 2rem);
+      font-weight: 300;
+      color: var(--cream);
+      opacity: 0.88;
+      max-width: 34rem;
+      line-height: 1.4;
+      margin: 0 auto 3.5rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 1.1rem 2.8rem;
+      transition: background 0.25s ease;
+    }
+    .btn-primary:hover { background: var(--gold-lt); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 1;
+    }
+    .hero-scroll-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      opacity: 0.4;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 3rem;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      animation: pulse-line 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-line {
+      0%, 100% { opacity: 0.2; transform: scaleY(0.6); }
+      50%       { opacity: 0.6; transform: scaleY(1); }
+    }
+
+    /* ============================================
+       SECTION UTILITIES
+    ============================================ */
+    section { padding: 7rem 2rem; }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.75rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .gold-rule {
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.55;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ============================================
+       SERVICES
+    ============================================ */
+    .services-section { background: var(--navy-mid); }
+    .services-intro {
+      max-width: 42rem;
+      margin-bottom: 4rem;
+    }
+    .services-intro p {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      line-height: 1.85;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gold-rule);
+      border: 1px solid var(--gold-rule);
+    }
+    .service-card {
+      background: var(--navy-card);
+      padding: 2.75rem 2.25rem;
+      transition: background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .service-card:hover { background: var(--navy-lt); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .service-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .service-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.85rem;
+      line-height: 1.2;
+    }
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--cream-dim);
+      line-height: 1.8;
+    }
+
+    /* ============================================
+       PRINCIPLES — THE SIGNATURE ELEMENT
+    ============================================ */
+    .principles-section { background: var(--navy); }
+    .principles-layout {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .principles-sidebar {
+      position: sticky;
+      top: 7rem;
+    }
+    .principles-sidebar .section-title { margin-bottom: 0.75rem; }
+    .principles-sidebar .gold-rule { margin-bottom: 1.75rem; }
+    .principles-sidebar p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--cream-dim);
+      line-height: 1.9;
+    }
+    .principles-list {
+      padding-top: 0.5rem;
+    }
+    .principle-item {
+      display: grid;
+      grid-template-columns: 3.5rem 1fr;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.65rem 0;
+      border-bottom: 1px solid var(--gold-rule);
+    }
+    .principle-item:first-child {
+      border-top: 1px solid var(--gold-rule);
+    }
+    .principle-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.28;
+      text-align: right;
+      letter-spacing: -0.02em;
+    }
+    .principle-text {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.35;
+    }
+
+    /* ============================================
+       BIO
+    ============================================ */
+    .bio-section { background: var(--navy-mid); }
+    .bio-layout {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .bio-sidebar {
+      position: sticky;
+      top: 7rem;
+    }
+    .bio-name {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .bio-credentials {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .bio-role {
+      font-size: 0.75rem;
+      color: var(--cream-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .bio-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 0;
+    }
+    .bio-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--cream-dim);
+      transition: color 0.2s ease;
+    }
+    .bio-contact-item:hover { color: var(--gold); }
+    .bio-contact-item svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .bio-body p {
+      font-size: 1rem;
+      color: var(--cream-dim);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .bio-body p:last-of-type { margin-bottom: 0; }
+    .bio-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2.25rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid rgba(184, 150, 90, 0.35);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .bio-cta:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      background: #060D18;
+      border-top: 1px solid var(--gold-rule);
+      padding: 4rem 2rem 2.5rem;
+    }
+    .footer-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.8fr;
+      gap: 3.5rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .footer-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      opacity: 0.6;
+    }
+    .footer-col-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .footer-contact-list a {
+      font-size: 0.85rem;
+      color: var(--cream-dim);
+      opacity: 0.75;
+      transition: color 0.2s, opacity 0.2s;
+    }
+    .footer-contact-list a:hover { color: var(--gold); opacity: 1; }
+    .footer-disclaimer {
+      font-size: 0.7rem;
+      color: var(--cream-dim);
+      opacity: 0.38;
+      line-height: 1.85;
+    }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(184, 150, 90, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.7rem;
+      color: var(--cream-dim);
+      opacity: 0.3;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { transition: opacity 0.2s; }
+    .footer-links a:hover { opacity: 0.7; }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.75rem; }
+      .nav-right .nav-link { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .principles-layout,
+      .bio-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .principles-sidebar,
+      .bio-sidebar { position: static; }
+      section { padding: 5rem 1.75rem; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.1rem 1.25rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero { padding: 8rem 1.5rem 5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-scroll-line { animation: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav aria-label="Main navigation">
+  <div class="nav-logo"><em>Aureus</em> Family Office</div>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#principles" class="nav-link">Principles</a>
+    <a href="#tom-malone" class="nav-link">Leadership</a>
+    <a href="mailto:tom.malone@aureus-fo.com?subject=I'd like to discuss the family office" class="nav-cta">Connect</a>
+  </div>
+</nav>
+
+
+<!-- ============================================
+     HERO
+============================================ -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Lehigh Valley, Pennsylvania</p>
+    <h1 class="hero-wordmark"><em>Aureus</em></h1>
+    <p class="hero-subtitle">Family Office</p>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-tagline">Designed for families that&nbsp;desire peace of mind</p>
+    <a href="mailto:tom.malone@aureus-fo.com?subject=I'd like to discuss the family office" class="btn-primary">Request a Conversation</a>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-label">Explore</span>
+  </div>
+</section>
+
+
+<!-- ============================================
+     SERVICES
+============================================ -->
+<section id="services" class="services-section">
+  <div class="container">
+    <p class="eyebrow">Where Aureus Excels</p>
+    <div class="services-intro">
+      <h2 class="section-title">Tackling complexity<br>across the family structure</h2>
+      <p>Aureus is specifically designed to address some of the most demanding challenges facing affluent families — from sitting atop the family structure to navigating private businesses and multi-generational transitions.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 13 14 8 17 11"/></svg>
+        </div>
+        <h3 class="service-name">Financial Reporting</h3>
+        <p class="service-desc">As wealth grows, families need a trusted set of eyes across their entire portfolio. We bring discipline and clarity to consolidated financial reporting — so you always know where you stand.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="service-name">Real Estate</h3>
+        <p class="service-desc">Whether commercial or residential, we help families manage growing property portfolios with the same rigor applied to financial assets — from acquisition through disposition.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="service-name">Investment Oversight</h3>
+        <p class="service-desc">We work closely with your wealth advisors and asset managers to help the family truly understand their investment portfolio and evaluate risk with confidence.<span style="font-size:0.7em; vertical-align:super;">*</span></p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="service-name">Private Trustee</h3>
+        <p class="service-desc">Each family determines their preference for trustee arrangements. We serve as private trustee or co-trustee, placing the family's interests at the center of every decision.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="service-name">Family Management</h3>
+        <p class="service-desc">Affluent families span two to three generations — each with different needs and aspirations. We provide guidance, structure, and continuity across the entire family.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3 class="service-name">Estate Planning</h3>
+        <p class="service-desc">Design, planning, execution, and ongoing management of the estate plan often spans years of careful work — and provides some of the greatest long-term value to the family.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     PRINCIPLES
+============================================ -->
+<section id="principles" class="principles-section">
+  <div class="container">
+    <div class="principles-layout">
+
+      <div class="principles-sidebar">
+        <p class="eyebrow">Our Foundation</p>
+        <h2 class="section-title">The Firm's Founding Principles</h2>
+        <div class="gold-rule"></div>
+        <p>These are not aspirations. They are the commitments that guide every decision Aureus makes — for our families, and for ourselves.</p>
+      </div>
+
+      <div class="principles-list" role="list">
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">1</span>
+          <span class="principle-text">Always do the right thing</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">2</span>
+          <span class="principle-text">Stand by your word, no matter what</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">3</span>
+          <span class="principle-text">Only work with respectable people</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">4</span>
+          <span class="principle-text">Walk in their shoes</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">5</span>
+          <span class="principle-text">Build lasting relationships</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">6</span>
+          <span class="principle-text">Think in terms of decades</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">7</span>
+          <span class="principle-text">Serve at the pleasure of others</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">8</span>
+          <span class="principle-text">Pay attention to the smallest detail</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">9</span>
+          <span class="principle-text">Challenge conventional thinking</span>
+        </div>
+        <div class="principle-item" role="listitem">
+          <span class="principle-num" aria-hidden="true">10</span>
+          <span class="principle-text">Be gracious with your time and talent</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BIO / LEADERSHIP
+============================================ -->
+<section id="tom-malone" class="bio-section">
+  <div class="container">
+    <div class="bio-layout">
+
+      <div class="bio-sidebar">
+        <p class="eyebrow">Leadership</p>
+        <h2 class="bio-name">Tom Malone</h2>
+        <p class="bio-credentials">CPA &nbsp;·&nbsp; CPC</p>
+        <p class="bio-role">Managing Partner</p>
+        <div class="gold-rule"></div>
+        <div class="bio-contacts">
+          <a href="mailto:tom.malone@aureus-fo.com" class="bio-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            tom.malone@aureus-fo.com
+          </a>
+          <a href="tel:6103909527" class="bio-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.43 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            610.390.9527
+          </a>
+          <a href="https://www.linkedin.com/in/thomasjmalonecpc" target="_blank" rel="noopener noreferrer" class="bio-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="bio-body">
+        <p>After eighteen years at a top-ten public accounting firm, Tom formed Aureus Family Office alongside two founding families. During his tenure in client service, he was responsible for tax compliance and strategy, estate planning, and navigating the complexities inherent in family business structures across multiple generations.</p>
+        <p>Tom grew up in the family business world — working for his grandfather Sam at the family's Italian bakery. That experience gave him an early and lasting understanding of what it means to build something across generations, and what it truly costs to protect it.</p>
+        <p>He is a licensed Certified Public Accountant in Pennsylvania and earned his professional coaching credentials through iPEC Coaching. Tom currently resides in Allentown, PA.</p>
+        <a href="mailto:tom.malone@aureus-fo.com?subject=I'd like to discuss the family office" class="bio-cta">Begin a Conversation &nbsp;→</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <p class="footer-brand">Aureus Family Office, LLC</p>
+      <p class="footer-tagline">Serving families that desire privacy</p>
+    </div>
+
+    <div>
+      <p class="footer-col-label">Contact</p>
+      <ul class="footer-contact-list">
+        <li><a href="tel:6103909527">610.390.9527</a></li>
+        <li><a href="mailto:tom.malone@aureus-fo.com">tom.malone@aureus-fo.com</a></li>
+        <li>Lehigh Valley, Pennsylvania</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-col-label">Disclosure</p>
+      <p class="footer-disclaimer">* Aureus Family Office, LLC does not provide investment advice and is not registered with the Securities and Exchange Commission. Tom Malone is a registered Certified Public Accountant (CPA) and not a licensed investment advisor. Mr. Malone and Aureus Family Office, LLC are not authorized to provide, nor do they provide, investment advice on any security, bond, or other investment regulated by the SEC. All information on this website is for informational purposes only.</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Aureus Family Office, LLC. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/terms-and-conditions">Terms</a>
+      <a href="/privacy-policy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
