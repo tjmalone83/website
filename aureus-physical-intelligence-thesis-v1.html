@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Intelligence: The TSLA + SPCX Investment Thesis — Aureus Family Office</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #0A1628;
+  --navy-mid:  #0E1D30;
+  --navy-lt:   #162540;
+  --navy-card: #111E32;
+  --navy-foot: #060D18;
+  --gold:      #B8965A;
+  --gold-lt:   #CDA96E;
+  --gold-rule: rgba(184,150,90,0.20);
+  --gold-dim:  rgba(184,150,90,0.12);
+  --cream:     #F0EDE6;
+  --cream-dim: #A8A49D;
+  --serif:     'Cormorant Garamond','Times New Roman',serif;
+  --sans:      'DM Sans',system-ui,sans-serif;
+  --gain-text: #166534; --gain-bg: #dcfce7;
+  --loss-text: #7f1d1d; --loss-bg: #fee2e2;
+  --warn-text: #713f12; --warn-bg: #fef3c7;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);font-size:15px;line-height:1.7;color:var(--navy);background:#fff;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--gold-rule);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:0;}
+.nav-logo{font-family:var(--serif);font-size:0.9rem;color:var(--gold);letter-spacing:0.06em;padding:14px 0;margin-right:32px;white-space:nowrap;}
+.nav-links{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-links a{color:var(--cream-dim);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;padding:14px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;}
+.nav-links a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-links a.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* ── HERO ── */
+.hero{background:var(--navy);padding:80px 40px 60px;text-align:center;border-bottom:1px solid var(--gold-rule);}
+.hero-eye{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.hero-title{font-family:var(--serif);font-size:3.4rem;font-weight:300;color:var(--cream);letter-spacing:-0.02em;line-height:1.15;margin-bottom:16px;max-width:800px;margin-left:auto;margin-right:auto;}
+.hero-sub{font-size:1rem;color:var(--cream-dim);max-width:600px;margin:0 auto 32px;}
+.hero-meta{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;}
+.meta-item{text-align:center;}
+.meta-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:4px;}
+.meta-value{font-family:var(--serif);font-size:1.1rem;color:var(--gold);}
+
+/* ── LAYOUT ── */
+.page{max-width:1100px;margin:0 auto;padding:60px 40px;}
+section{margin-bottom:80px;scroll-margin-top:60px;}
+
+/* ── SECTION HEADERS ── */
+.sec-eye{font-size:0.6rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.sec-title{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--navy);margin-bottom:6px;}
+.sec-divider{border:none;border-top:1px solid var(--gold-rule);margin:16px 0 28px;}
+
+/* ── EXEC SUMMARY CARD ── */
+.exec{background:var(--navy);border-radius:8px;padding:28px 32px;margin-bottom:32px;}
+.exec-eye{font-size:0.58rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.exec-title{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--cream);margin-bottom:14px;}
+.exec p{font-size:13.5px;color:var(--cream);line-height:1.75;margin-bottom:10px;}
+.exec p:last-child{margin-bottom:0;}
+.exec strong{color:var(--gold-lt);}
+
+/* ── STAT ROW ── */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--gold-rule);border:1px solid var(--gold-rule);border-radius:8px;overflow:hidden;margin-bottom:32px;}
+.stat-cell{background:#fff;padding:20px 22px;}
+.stat-cell.dark{background:var(--navy-mid);}
+.stat-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:6px;}
+.stat-label.lt{color:var(--cream-dim);}
+.stat-value{font-family:var(--serif);font-size:1.7rem;font-weight:300;color:var(--navy);}
+.stat-value.gold{color:var(--gold);}
+.stat-value.cream{color:var(--cream);}
+.stat-value.gain{color:var(--gain-text);}
+.stat-note{font-size:11px;color:var(--cream-dim);margin-top:4px;}
+
+/* ── PROSE ── */
+.prose{max-width:780px;}
+.prose p{margin-bottom:16px;color:#374151;line-height:1.75;font-size:14.5px;}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{color:var(--navy);}
+
+/* ── TABLES ── */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px;}
+thead th{background:var(--navy);color:var(--cream);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:11px 14px;text-align:left;}
+tbody tr:nth-child(even){background:var(--cream);}
+tbody tr:nth-child(odd){background:#fff;}
+tbody tr:hover{background:var(--gold-dim);}
+td{padding:10px 14px;border-bottom:1px solid var(--gold-rule);vertical-align:top;}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;}
+.badge-gain{background:var(--gain-bg);color:var(--gain-text);}
+.badge-loss{background:var(--loss-bg);color:var(--loss-text);}
+.badge-watch{background:var(--warn-bg);color:var(--warn-text);}
+.badge-gold{background:var(--gold-dim);color:#8a6a30;}
+
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:28px;}
+.card{background:var(--cream);border:1px solid var(--gold-rule);border-radius:6px;padding:20px;}
+.card.dark{background:var(--navy-card);border-color:rgba(184,150,90,0.15);}
+.card-ticker{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;color:var(--gold);margin-bottom:5px;}
+.card-name{font-family:var(--serif);font-size:1rem;color:var(--navy);margin-bottom:8px;}
+.card.dark .card-name{color:var(--cream);}
+.card-body{font-size:12.5px;color:#4b5563;line-height:1.6;}
+.card.dark .card-body{color:var(--cream-dim);}
+.card-conf{margin-top:12px;padding-top:12px;border-top:1px solid var(--gold-rule);font-size:11px;color:var(--cream-dim);display:flex;align-items:center;gap:6px;}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.dot-h{background:#4ade80;}.dot-m{background:var(--gold);}.dot-l{background:#94a3b8;}
+
+/* ── TWO-COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+.two-col.wide-narrow{grid-template-columns:3fr 2fr;}
+@media(max-width:700px){.two-col,.two-col.wide-narrow{grid-template-columns:1fr;}}
+
+/* ── CALLOUT BOXES ── */
+.callout{border-left:3px solid var(--gold);background:var(--cream);border-radius:0 6px 6px 0;padding:16px 20px;margin-bottom:20px;}
+.callout-warn{border-left-color:#f59e0b;background:#fffbeb;}
+.callout-gain{border-left-color:#16a34a;background:#f0fdf4;}
+.callout-risk{border-left-color:#dc2626;background:#fff5f5;}
+.callout-eye{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.callout-warn .callout-eye{color:#b45309;}
+.callout-gain .callout-eye{color:#15803d;}
+.callout-risk .callout-eye{color:#dc2626;}
+.callout p{font-size:13px;color:#374151;line-height:1.65;margin-bottom:6px;}
+.callout p:last-child{margin-bottom:0;}
+.callout strong{color:var(--navy);}
+
+/* ── TIMELINE ── */
+.timeline{margin-bottom:28px;}
+.tl-item{display:flex;gap:20px;margin-bottom:20px;}
+.tl-left{text-align:right;min-width:90px;flex-shrink:0;}
+.tl-date{font-family:var(--serif);font-size:1rem;color:var(--gold);}
+.tl-dot-col{display:flex;flex-direction:column;align-items:center;gap:0;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:4px;}
+.tl-line{width:1px;flex:1;background:var(--gold-rule);min-height:20px;}
+.tl-right{flex:1;padding-bottom:16px;}
+.tl-head{font-weight:600;font-size:13.5px;color:var(--navy);margin-bottom:4px;}
+.tl-body{font-size:13px;color:#4b5563;line-height:1.6;}
+
+/* ── LAYER BANDS ── */
+.layer-band{background:var(--navy-mid);border-radius:8px;padding:18px 24px;margin-bottom:8px;display:flex;align-items:flex-start;gap:16px;}
+.layer-num{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--gold);flex-shrink:0;line-height:1;margin-top:2px;}
+.layer-content h4{font-family:var(--serif);font-size:1.05rem;color:var(--cream);margin-bottom:4px;}
+.layer-content p{font-size:12.5px;color:var(--cream-dim);line-height:1.6;}
+
+/* ── PREDICTIONS TABLE ── */
+.pred-grid{display:grid;gap:12px;margin-bottom:24px;}
+.pred-row{background:var(--cream);border:1px solid var(--gold-rule);border-radius:6px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;}
+.pred-thesis{font-size:13px;color:var(--navy);line-height:1.55;}
+.pred-conf{font-size:11px;font-weight:600;letter-spacing:0.08em;padding:3px 10px;border-radius:12px;white-space:nowrap;}
+.conf-high{background:var(--gain-bg);color:var(--gain-text);}
+.conf-med{background:var(--warn-bg);color:var(--warn-text);}
+.conf-low{background:var(--loss-bg);color:var(--loss-text);}
+.pred-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:4px;}
+
+/* ── SOURCES ── */
+.source-list{list-style:none;counter-reset:src;}
+.source-list li{counter-increment:src;display:flex;gap:10px;margin-bottom:10px;font-size:12.5px;color:#4b5563;line-height:1.55;}
+.source-list li::before{content:counter(src);background:var(--navy);color:var(--gold);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-top:1px;}
+.source-list a{color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold-rule);}
+.source-list a:hover{color:var(--gold);}
+sup{font-size:10px;color:var(--gold);font-weight:600;}
+
+/* ── ACCORDION ── */
+.accord{margin-bottom:8px;}
+.accord-btn{width:100%;background:none;border:1px solid var(--gold-rule);border-radius:6px;padding:14px 18px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--navy);transition:background 0.15s;}
+.accord-btn:hover{background:var(--cream);}
+.accord-btn.open{background:var(--cream);border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.accord-icon{font-size:18px;color:var(--gold);transition:transform 0.2s;}
+.accord-btn.open .accord-icon{transform:rotate(45deg);}
+.accord-body{display:none;border:1px solid var(--gold-rule);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:var(--cream);}
+.accord-body.open{display:block;}
+.accord-body p{font-size:13px;color:#374151;line-height:1.7;margin-bottom:10px;}
+.accord-body p:last-child{margin-bottom:0;}
+
+/* ── VERSION BADGE ── */
+.ver-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--gold-rule);border-radius:4px;padding:4px 12px;font-size:11px;color:var(--gold);letter-spacing:0.1em;margin-bottom:24px;}
+.ver-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy-foot);padding:40px;text-align:center;border-top:1px solid var(--gold-rule);}
+footer p{font-size:12px;color:var(--cream-dim);letter-spacing:0.05em;line-height:1.8;}
+footer a{color:var(--gold);text-decoration:none;}
+footer strong{color:var(--cream);}
+
+@media(max-width:768px){
+  .hero-title{font-size:2.2rem;}
+  .page{padding:40px 20px;}
+  .nav-inner{padding:0 20px;}
+  .stat-row{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Aureus</div>
+    <div class="nav-links">
+      <a href="#exec">Executive Summary</a>
+      <a href="#thesis">The Thesis</a>
+      <a href="#spcx">SpaceX (SPCX)</a>
+      <a href="#tsla">Tesla (TSLA)</a>
+      <a href="#compare">TSLA vs SPCX</a>
+      <a href="#acquisitions">Acquisitions</a>
+      <a href="#starsystems">Starfall &amp; Starmind</a>
+      <a href="#terafab">Terafab</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#supplychain">Physical AI Supply Chain</a>
+      <a href="#geo">Geo Risk</a>
+      <a href="#framework">Investment Framework</a>
+      <a href="#predictions">Predictions</a>
+      <a href="#sources">Sources</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eye">Aureus Family Office · Investment Research</div>
+  <h1 class="hero-title">Physical Intelligence: The TSLA + SPCX Investment Thesis</h1>
+  <p class="hero-sub">A first-principles analysis of how Elon Musk's portfolio of companies is building the central nervous system of a physically intelligent world — and who benefits when the tide rises.</p>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">1.0 · Draft</div></div>
+    <div class="meta-item"><div class="meta-label">Published</div><div class="meta-value">June 2026</div></div>
+    <div class="meta-item"><div class="meta-label">Next Review</div><div class="meta-value">September 2026</div></div>
+    <div class="meta-item"><div class="meta-label">Authors</div><div class="meta-value">T. Malone + Claude</div></div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 1: EXECUTIVE SUMMARY -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="exec">
+  <div class="sec-eye">Section 1</div>
+  <h2 class="sec-title">Executive Summary</h2>
+  <hr class="sec-divider">
+
+  <div class="ver-badge"><div class="ver-dot"></div> Living Document — Quarterly Updates Planned</div>
+
+  <div class="exec">
+    <div class="exec-eye">Controlling Idea</div>
+    <div class="exec-title">The thesis in four sentences</div>
+    <p>Elon Musk is not building a rocket company with an internet service attached. He is building <strong>the infrastructure layer of a world where physical labor is performed by machines</strong> — a central nervous system of connectivity (Starlink), compute (orbital data centers), intelligence (Grok/xAI), and hardware (Optimus/Tesla) that no terrestrial competitor can replicate from orbit. SpaceX went public not to raise cash but to create acquisition currency; the Cursor deal four days after the IPO proved it. The $22.7 trillion in "enterprise applications" the S-1 refused to explain is, in our analysis, the global labor market becoming digital — and SpaceX is the infrastructure company that monetizes every physical task that flows through it.</p>
+    <p>For investors with a 5-10 year horizon: <strong>Tesla is the better risk-adjusted position.</strong> SpaceX at 94x revenue with negative earnings prices in near-perfect execution. Tesla at 185x earnings actually earns money, has Optimus ramping, holds $2B in SpaceX equity, and co-builds Terafab with SpaceX — giving you meaningful SPCX exposure at a lower entry premium. The ecosystem around both companies creates significant opportunity in semiconductor equipment, rare earth magnets, power infrastructure, and industrial automation — several of which are underpriced relative to their strategic importance.</p>
+    <p><strong>The most misunderstood element of the SPCX story:</strong> The $80B+ in contracted compute revenue is not a business pivot — it is bridge financing. SpaceX spent $18B on 555,000 NVIDIA GPUs, Grok failed to fill the capacity, and Musk turned a surplus into a 3-year cash engine while Terafab is built. All contracts expire by 2029. All carry 90-day exit clauses SpaceX can invoke as early as April 2027. When it takes the compute back, the GPUs don't become worthless — they cascade from frontier training into inference, retaining substantial value. Anthropic, Google, and Reflection are effectively subsidizing the construction of the infrastructure that will eventually compete against them. Wall Street models this revenue as persistent. It is not designed to be.</p>
+    <p><strong>The most underappreciated risk:</strong> China controls 63-90% of critical robot component supply chains and demonstrated in April 2025 that it will weaponize that position. The Western response (led by MP Materials) is early and underfunded relative to the dependency it's trying to resolve. This geopolitical constraint is the single largest tail risk to the entire physical intelligence thesis.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell dark"><div class="stat-label lt">SPCX IPO Raise</div><div class="stat-value gold">$86.2B</div><div class="stat-note">Largest IPO in history · June 11, 2026</div></div>
+    <div class="stat-cell dark"><div class="stat-label lt">SPCX Valuation</div><div class="stat-value gold">$2.7T+</div><div class="stat-note">Post-Cursor acquisition announcement</div></div>
+    <div class="stat-cell dark"><div class="stat-label lt">TSLA Market Cap</div><div class="stat-value gold">~$1.5T</div><div class="stat-note">185x P/E · Priced for AI/robotics future</div></div>
+    <div class="stat-cell dark"><div class="stat-label lt">Starlink Subscribers</div><div class="stat-value gold">10.3M</div><div class="stat-note">164 countries · 9,600 satellites</div></div>
+    <div class="stat-cell dark"><div class="stat-label lt">SpaceX 2025 Revenue</div><div class="stat-value gold">$18.7B</div><div class="stat-note">61% from Starlink connectivity</div></div>
+    <div class="stat-cell dark"><div class="stat-label lt">Contracted AI Compute</div><div class="stat-value gold">$80B+</div><div class="stat-note">Anthropic + Google + Reflection · committed through 2029</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Position</th><th>Conviction</th><th>Horizon</th><th>Thesis</th><th>Key Risk</th></tr></thead>
+    <tbody>
+      <tr><td><strong>TSLA</strong></td><td><span class="badge badge-gain">High</span></td><td>5-10 yr</td><td>Physical AI platform at lower valuation than SPCX; Optimus + FSD + Energy + SPCX stake</td><td>Execution on Optimus / Musk attention</td></tr>
+      <tr><td><strong>SPCX</strong></td><td><span class="badge badge-watch">Medium</span></td><td>10-20 yr</td><td>Orbital infrastructure monopoly; monetizes physical intelligence layer globally</td><td>94x revenue priced for perfection</td></tr>
+      <tr><td><strong>NVDA</strong></td><td><span class="badge badge-gain">High</span></td><td>3-5 yr</td><td>xAI is "NVDA house" — $300B capex commitment pre-Terafab</td><td>Terafab eventually reduces dependency</td></tr>
+      <tr><td><strong>NUE</strong></td><td><span class="badge badge-gain">High</span></td><td>2-4 yr</td><td>Steel demand from Terafab + Gigabays + Starfactory construction; thesis reinforced</td><td>Construction delays</td></tr>
+      <tr><td><strong>MP</strong></td><td><span class="badge badge-gain">High</span></td><td>3-7 yr</td><td>Only US mine-to-magnet; Tesla/SpaceX must solve rare earth dependency</td><td>China normalizes trade; MP loses urgency</td></tr>
+      <tr><td><strong>ASML</strong></td><td><span class="badge badge-gain">High</span></td><td>3-5 yr</td><td>Only EUV supplier; Terafab cannot function without ASML equipment</td><td>EUV order book delay to 2027+</td></tr>
+      <tr><td><strong>VST</strong></td><td><span class="badge badge-watch">Medium</span></td><td>2-4 yr</td><td>Texas power generator; Terafab needs 10+ GW; no announced power contract yet</td><td>Deal goes to competitor</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 2: THE THESIS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="thesis">
+  <div class="sec-eye">Section 2</div>
+  <h2 class="sec-title">The Physical Intelligence Platform</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">From breadcrumbs to thesis</div>
+    <p>SpaceX's S-1 disclosed a $22.7 trillion "enterprise applications" market without defining it. Rather than accepting internet blog commentary, we traced Elon's public statements and operational decisions across every company he controls to reconstruct what he actually believes. The answer: <strong>physical intelligence as a service</strong> — the compute, connectivity, and intelligence layer for a world where robots perform physical labor and humans choose what to do with the resulting abundance. SpaceX owns the orbital infrastructure. Tesla owns the robot hardware. xAI/Grok owns the intelligence. Cursor owns the code. Neuralink owns the human interface. These are not separate companies; they are organs of a single system.</p>
+    <p><em>Analysis developed through first-principles reasoning by T. Malone and Claude (Anthropic) — June 2026.</em></p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;color:var(--navy);">The Breadcrumbs Across Companies</h3>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">Tesla <span style="color:var(--cream-dim);font-weight:400;">→ Physical labor automation</span><span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Optimus is Elon's stated #1 priority — "the largest product opportunity in history." He ended Model S/X production to convert Fremont into a robot factory targeting 1 million units/year. At $20-30K per robot replacing $35-50K/year in human labor, the economics are immediate. The robot is the product; SpaceX is the brain that runs it.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">Neuralink <span style="color:var(--cream-dim);font-weight:400;">→ Human cognitive augmentation</span><span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>High-volume BCI production scaling in 2026. Long-term goal: human-AI symbiosis — not to serve AI, but to keep humans cognitively competitive with AI. Each Neuralink user generates continuous neural data requiring real-time AI inference via orbital compute connected via Starlink. The enterprise application: every knowledge worker pays a monthly subscription for augmented cognition.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">The Boring Company <span style="color:var(--cream-dim);font-weight:400;">→ Physical logistics layer</span><span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Underground tunnels are the last-mile delivery system for a robot-operated world. Robots operating above ground are expensive, congested, weather-dependent. Underground through Boring Company tunnels, they operate in a controlled, three-dimensional grid. SpaceX coordinates it from orbit. The Boring Company executes it underground.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">xAI + Grok + X <span style="color:var(--cream-dim);font-weight:400;">→ Truth-seeking intelligence layer</span><span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Elon explicitly designed Grok as a "maximally truth-seeking" AI — anti-establishment, anti-ideological-capture. X provides real-time global information feed. Together they form the intelligence layer that every robot and augmented human queries. The enterprise application: every AI interaction with Grok generates revenue; every X transaction fee is a toll on information.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">SpaceX + Starlink <span style="color:var(--cream-dim);font-weight:400;">→ Central nervous system</span><span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>9,600 active satellites. 75% of all maneuverable satellites globally. V3 satellites launching H2 2026 with 20x bandwidth increase. Orbital data centers (AI1) beginning prototype launch 2027. Terafab chip manufacturing in Texas. This is not an internet service company — it is the orbital infrastructure layer that makes physical intelligence planetary in scale.</p></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;color:var(--navy);">The Unified Theory</h3>
+      <div class="callout">
+        <div class="callout-eye">The Physical Intelligence Stack</div>
+        <p>The global labor market is ~$50 trillion annually. As physical labor transitions from humans to robots over the next 20 years, every physical task requires: <strong>connectivity</strong> (Starlink), <strong>compute</strong> (orbital data centers), <strong>intelligence</strong> (Grok/xAI), <strong>chips</strong> (Terafab), and <strong>robot hardware</strong> (Optimus/Tesla).</p>
+        <p>SpaceX owns the first four. Tesla owns the fifth. The $22.7T is not enterprise software — it is the intelligence layer toll on every physical task that transitions from human to machine.</p>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-eye">What Elon is NOT building</div>
+        <p>He is not building for governments (his stated worldview is adversarial to government control of AI and information). He is not building defense/intelligence infrastructure as a primary mission — that funds the mission, it is not the mission. He is not building financial services for the unbanked as a core thesis. Those are revenue streams. The mission is abundance for humanity: "universal high income" through physical labor automation.</p>
+      </div>
+      <div class="layer-band">
+        <div class="layer-num">01</div>
+        <div class="layer-content"><h4>Robot labor as a service</h4><p>Enterprises subscribe to Optimus labor. SpaceX provides the AI backbone. $10T revenue projection from Musk (Tesla alone).</p></div>
+      </div>
+      <div class="layer-band">
+        <div class="layer-num">02</div>
+        <div class="layer-content"><h4>Human cognitive augmentation</h4><p>Neuralink users at scale pay monthly for real-time Grok intelligence via orbital compute. Knowledge worker productivity at a subscription price.</p></div>
+      </div>
+      <div class="layer-band">
+        <div class="layer-num">03</div>
+        <div class="layer-content"><h4>Autonomous operations infrastructure</h4><p>Every FSD vehicle, autonomous delivery system, and AI-coordinated factory runs on SpaceX's compute and Starlink connectivity layer.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:32px 0 14px;">Independent Validation — Grok's Analysis of the $22.7T TAM</h3>
+  <div class="callout" style="margin-bottom:16px;">
+    <div class="callout-eye">Methodology · Grok (xAI) — Independent First-Principles Analysis · June 2026</div>
+    <p>We submitted this thesis and the underlying HTML document to Grok for independent evaluation. Grok approached the $22.7T "enterprise applications" number from first principles using only verifiable elements: Elon's repeated public statements, the S-1 language, and cross-portfolio operational signals. Grok's independent reasoning <strong>landed in the same place as our analysis at approximately 80–85% alignment</strong> — a meaningful external validation of the framework. Where differences exist, we've incorporated them as refinements. Full credit to Grok / xAI for the independent reasoning. Their assessment of our document: <em>"It is one of the better-reasoned documents on this topic I have seen."</em></p>
+  </div>
+
+  <div class="two-col" style="margin-bottom:20px;">
+    <div>
+      <h4 style="font-family:var(--serif);font-size:1.05rem;margin-bottom:12px;color:var(--navy);">Grok's Theorized Composition of the $22.7T</h4>
+      <table>
+        <thead><tr><th>TAM Layer</th><th>Grok's Estimate</th><th>Dollar Range</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Robot / Embodied AI coordination &amp; inference</strong></td><td>40–50%</td><td>$9–11T</td></tr>
+          <tr><td><strong>Human cognitive augmentation / Neuralink symbiosis</strong></td><td>15–20%</td><td>$3.5–4.5T</td></tr>
+          <tr><td><strong>Orbital &amp; in-space enterprise</strong> (Starfall + Starmind)</td><td>15–20%</td><td>$3.5–4.5T</td></tr>
+          <tr><td><strong>Autonomous operations backbone</strong> (FSD, drones, logistics)</td><td>10–15%</td><td>$2–3T</td></tr>
+          <tr><td><strong>Platform &amp; new category effects</strong> (Cursor, robot app stores)</td><td>Remainder</td><td>~$1.7T</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-gain" style="margin-top:12px;">
+        <div class="callout-eye">Grok's Core Framing</div>
+        <p>"The $22.7T is the <strong>aggregate present value of the recurring intelligence, connectivity, coordination, and compute layer</strong> that enables the multi-decade global transition of physical work from humans to robotic and embodied AI systems. SpaceX owns or uniquely enables the first four layers at planetary scale. Tesla owns the fifth. The $22.7T is the monetizable toll on the intelligence/coordination layer as physical tasks shift to machines."</p>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-family:var(--serif);font-size:1.05rem;margin-bottom:12px;color:var(--navy);">What Grok Identified as Missing</h4>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">Tesla Energy as Foundational Layer <span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Grok noted that Tesla's solar and Megapack energy business is under-weighted in most analyses. It is not a parallel business — it is the <strong>enabling substrate</strong>. Cheap, abundant energy is a prerequisite for robot labor abundance and orbital compute economics. The "universal high income" thesis rests on energy + intelligence + physical labor all becoming cheap simultaneously. Tesla Energy is the power foundation for everything terrestrial, including Terafab, Gigabay operations, and Starlink ground stations. To put this in scale: Tesla Energy deployed <strong>8.8 GWh in Q1 2026 alone</strong> at 39.5% gross margins — on a trajectory exceeding 30+ GWh annually. Terafab alone requires 10+ GW of power. Tesla's energy storage infrastructure, growing 50%+ year-over-year, is simultaneously the most profitable Tesla division and the enabling power layer for the physical intelligence buildout.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">The Mars Flywheel <span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>SpaceX's explicit core mission is making life multiplanetary. Grok noted that robot labor — specifically Optimus fleets — is <strong>the only plausible way to rapidly build and sustain a self-sufficient Mars presence</strong>. Orbital compute (Starmind) provides the coordination layer; Starlink provides communications. The robot economy on Earth funds and accelerates the Mars mission, and the Mars mission validates and stress-tests the robot economy. This civilizational flywheel is central to Elon's stated motivations but gets less weight than the Earth robot-economy angle in most investment analyses.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">X Platform's Role — Data Flywheel <span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Grok identified X as significantly under-played. X is not just a social app — it is a <strong>real-time data flywheel for AI training</strong>, a distribution channel for Grok, and the "public square" for coordinating human meaning in an abundance world. Elon has commented on the meaning problem: once material scarcity is solved by robots, humans face the harder question of purpose. X is positioned as the platform for human coordination and meaning in that post-scarcity world.</p></div>
+      </div>
+      <div class="accord">
+        <button class="accord-btn" onclick="toggleAccord(this)">Monetization Mechanics — The Missing Plumbing <span class="accord-icon">+</span></button>
+        <div class="accord-body"><p>Grok noted the analysis correctly identifies the intelligence/coordination toll layer but is lighter on how the toll is actually captured at scale: per-robot monthly intelligence subscriptions? per-Neuralink user cognitive augmentation fee? per-inference charges? platform take rate on a future robot app store? A mix? The document identifies the layer; Grok suggests the next refinement is modeling specific unit economics for each monetization pathway. Likely answer: a mix of subscription (fleet-level), inference-per-query, and platform take rates — similar to AWS's blended model.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn" style="margin-bottom:0;">
+    <div class="callout-eye">Grok's Bottom Line · Quoted Directly</div>
+    <p>"The $22.7T is best read as the intelligence/connectivity/compute layer enabling the shift of global physical work to robotic systems, with SpaceX positioned to own the uniquely scalable orbital portion. The attached document captures this thesis very effectively. My independent reasoning lands in the same place after tracing the same breadcrumbs. The analysis is directionally compelling and under-appreciated if investors still view the company narrowly as 'rockets + satellite internet.'" — Grok, June 2026</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 3: SPACEX -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="spcx">
+  <div class="sec-eye">Section 3</div>
+  <h2 class="sec-title">SpaceX (SPCX) — The Platform</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">A rocket company that is actually an AI infrastructure conglomerate</div>
+    <p>SpaceX went public June 11, 2026 in the largest IPO in history — <strong>$86.2 billion raised</strong> (including greenshoe). By June 16, four days later, it deployed that currency to acquire Cursor for $60 billion in stock, paying zero cash. This was not coincidence. The IPO created acquisition currency; the Cursor deal was the first shot. SpaceX is currently valued at ~$2.7 trillion — trading at 94x revenue with negative earnings — which prices in sustained execution on orbital compute, Terafab, and the robot economy. That is a high bar. But the underlying moat (80% of global mass to orbit, 75% of all maneuverable satellites, the only orbital compute infrastructure under construction) is structurally unique.</p>
+    <p>Key concern: <strong>SpaceX merged with xAI in February 2026, absorbing a loss-making AI division.</strong> The combined entity posted a ~$4.9B net loss for the period. The ~$27.8B annually in contracted compute revenue (Anthropic + Google + Reflection) provides meaningful and growing offset, but the company is in heavy investment mode for 3-5 more years before Terafab and orbital data centers generate operating income at scale.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell"><div class="stat-label">2025 Revenue</div><div class="stat-value">$18.7B</div><div class="stat-note">+49% Starlink; +8% Space</div></div>
+    <div class="stat-cell"><div class="stat-label">Net Loss (2025-26)</div><div class="stat-value" style="color:var(--loss-text);">($4.9B)</div><div class="stat-note">Primarily xAI merger + infrastructure capex</div></div>
+    <div class="stat-cell"><div class="stat-label">Adj. EBITDA 2025</div><div class="stat-value">$6.6B</div><div class="stat-note">Starlink segment ~$7.2B EBITDA alone</div></div>
+    <div class="stat-cell"><div class="stat-label">IPO Price / Shares</div><div class="stat-value">$135</div><div class="stat-note">555.6M Class A shares · Nasdaq: SPCX</div></div>
+    <div class="stat-cell"><div class="stat-label">Market Cap</div><div class="stat-value">$2.7T+</div><div class="stat-note">Post-Cursor, post-IPO trading</div></div>
+    <div class="stat-cell"><div class="stat-label">Musk Voting Control</div><div class="stat-value">~82%</div><div class="stat-note">Dual-class structure; public has no governance</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Three Business Segments</h3>
+      <table>
+        <thead><tr><th>Segment</th><th>2025 Revenue</th><th>Operating Income</th><th>Growth</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Connectivity (Starlink)</strong></td><td>$11.4B</td><td>$4.4B</td><td>+50% YoY</td></tr>
+          <tr><td><strong>Space (Launch / Dragon)</strong></td><td>$4.1B</td><td>($657M)</td><td>+8% YoY</td></tr>
+          <tr><td><strong>AI (xAI / Colossus)</strong></td><td>$3.2B</td><td>($6.4B)</td><td>New segment</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-gain">
+        <div class="callout-eye">Contracted AI Revenue · Updated June 23, 2026</div>
+        <p><strong>Anthropic:</strong> $1.25B/month through May 2029 (~$45B total) · ~325,000 GPUs across Colossus 1 + partial Colossus 2.</p>
+        <p><strong>Google:</strong> $920M/month, October 2026–June 2029 (~$33B total) · ~110,000 GPUs. Internally framed as "bridge capacity" for Gemini Enterprise demand.</p>
+        <p><strong>Reflection AI:</strong> $150M/month, July 2026–2029 (~$6.3B total) · GB300 chips at Colossus 2. Founded by AlphaGo architect; Pentagon-connected; $800M Nvidia-backed.</p>
+        <p>Combined: <strong>~$2.32B/month · ~$27.8B annualized · $80B+ committed through 2029.</strong> All three deals carry 90-day exit clauses SpaceX can invoke unilaterally after December 31, 2026.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Why SpaceX Went Public</h3>
+      <div class="callout">
+        <div class="callout-eye">The Acquisition Currency Thesis</div>
+        <p>SpaceX could have raised capital privately — it had done so repeatedly at increasing valuations. Going public accomplished something private fundraising cannot: <strong>it created a liquid, market-priced acquisition currency.</strong></p>
+        <p>Four days after the IPO, SpaceX acquired Cursor for $60 billion in stock — 3.4% dilution at IPO valuation. Zero cash required. Competitive framing also matters: Anthropic and OpenAI both announced their own IPOs simultaneously. Being public at $1.77T establishes SpaceX as the AI infrastructure standard.</p>
+      </div>
+
+      <div class="callout callout-gain">
+        <div class="callout-eye">Cash Position · As of June 19, 2026</div>
+        <p>SpaceX reported <strong>$100.8 billion in cash</strong> — a function of the $86.2B IPO, prior cash on hand, and a concurrent bond deal. The Cursor acquisition is all-stock, preserving this cash entirely for infrastructure deployment. At $100B+, SpaceX has sufficient capital to fund Terafab Phase 1 ($55B) and full Starship infrastructure development simultaneously, without returning to markets.</p>
+      </div>
+
+      <div class="callout callout-warn">
+        <div class="callout-eye">Key Risk: Governance</div>
+        <p>Musk retains approximately 82% of voting power via dual-class structure. Public shareholders have no meaningful governance rights. His attention is divided across Tesla, xAI, Neuralink, The Boring Company, X, and government advisory roles. The single biggest operational risk is not competition — it is concentration of strategic judgment in one individual.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn" style="margin-bottom:28px;">
+    <div class="callout-eye">The Bridge Financing Thesis — June 23, 2026 · Aureus Analysis</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div>
+        <p><strong>Why the rentals exist.</strong> Grok failed to generate demand that justified the infrastructure Musk had already built. Grok's app downloads fell 60% from January to April 2026; Grok generates less than $1B in annualized revenue while Anthropic — its primary tenant — is on track for $40B+. The compute wasn't rented because Musk decided to become a data center landlord. It was rented because Grok couldn't fill it, and idle hardware is dead capital.</p>
+        <p><strong>The actual structure.</strong> SpaceX spent ~$18B acquiring 555,000 NVIDIA GPUs. It is generating $80B+ in contracted rental revenue from that hardware over three years — a ~4.4x return on hardware cost before residual value. That cash funds Terafab ($55-119B), Starship development, Gigabay construction, and Optimus factory buildout. The 90-day exit clauses are SpaceX's options, not the customers'. After December 31, 2026, SpaceX can begin reclaiming compute with 90 days notice — effective as early as April 2027.</p>
+        <p><strong>The competitive irony.</strong> Anthropic, Google, and Reflection are paying SpaceX to fund the construction of the infrastructure that will eventually compete against all three of them. They have no choice — demand for AI compute exceeds available supply by every measure, and SpaceX built the only meaningful surplus in existence.</p>
+      </div>
+      <div>
+        <p><strong>The cascade model — why reclaimed chips aren't worthless.</strong> GPU value doesn't collapse when rental contracts expire. CoreWeave data shows A100 chips from 2020 are still fully booked for inference workloads; H100s from expired contracts rebook at 95% of original pricing. The value cascade: frontier training (years 1-2) → inference at scale (years 3-4) → batch processing (years 5-6). When SpaceX reclaims its H100, H200, and GB200 fleet in 2027-2029, those chips cascade into inference for Grok 2.0, Cursor code completions, and Optimus physical AI — while Terafab's D3 and AI5 chips handle frontier training.</p>
+        <p><strong>What replaces the $27.8B/year.</strong> Cursor enterprise subscriptions ($2.6B ARR, growing); Grok inference at scale on Terafab chips with no NVIDIA margin paid; orbital AI1 data center revenue beginning 2028; physical intelligence platform revenue as Optimus deploys at scale. The rental period is a transition window, not a business model. Wall Street is modeling this revenue as permanent. Musk has stated publicly that analysts should not — the compute is coming back.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;">The IPO to Cursor Timeline</h3>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">Feb '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-right"><div class="tl-head">SpaceX acquires xAI ($1.25T combined valuation)</div><div class="tl-body">Grok AI + X platform merged into SpaceX. Strategy shifts from rocket company to "rockets + AI + social." First retrospective recast of financials to include xAI.</div></div></div>
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">Mar '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-right"><div class="tl-head">Terafab announced ($55B–$119B semiconductor fab)</div><div class="tl-body">Joint venture: SpaceX, Tesla, Intel. Austin prototype fab + Grimes County full-scale facility. D3 space chip + AI5 automotive/robot chip. Intel's 14A/18A process node.</div></div></div>
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">Apr '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-right"><div class="tl-head">SpaceX secures Cursor purchase option ($60B or $10B partnership)</div><div class="tl-body">Signals intent to own developer layer. Option to buy outright or pay $10B for partnership arrangement.</div></div></div>
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">May '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-right"><div class="tl-head">S-1 filed; Terafab financials revealed ($119B full buildout)</div><div class="tl-body">First public look at financials. $28.5T TAM disclosed. Anthropic + Google compute contracts revealed. Grimes County property tax abatement approved 4-1.</div></div></div>
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">Jun 11 '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-right"><div class="tl-head">IPO: $135/share, $86.2B raised (with greenshoe). Largest IPO in history.</div><div class="tl-body">Stock rose 19% on day one to $160.95. Musk became world's first trillionaire. Market cap exceeded $2T on day one.</div></div></div>
+    <div class="tl-item"><div class="tl-left"><div class="tl-date">Jun 16 '26</div></div><div class="tl-dot-col"><div class="tl-dot"></div></div><div class="tl-right"><div class="tl-head">Cursor acquired: $60B all-stock. Largest VC-backed startup acquisition in history.</div><div class="tl-body">$2.6B ARR. 4M+ developer users. Customers include Stripe, Adobe, NVIDIA. Zero cash deployed — pure stock currency. SpaceX market cap crosses $2.7T.</div></div></div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">SPCX Share Lockup Schedule — A Ladder, Not a Cliff</h3>
+  <div class="callout" style="margin-bottom:16px;">
+    <div class="callout-eye">Why This Matters for SPCX Investors</div>
+    <p>At IPO, only ~5% of SpaceX's 13 billion shares entered the free float. The remainder unlocks in nine separate tranches through June 2027 — a deliberate staggered structure designed to prevent a single cliff event. The largest single supply shock comes on <strong>June 12, 2027</strong> when Elon Musk's ~6.4 billion shares (49% of all shares outstanding) become eligible to sell. All data sourced from the SpaceX 424B4 Final Prospectus filed June 12, 2026.</p>
+  </div>
+
+  <div id="lockup-chart" style="background:#fff;border:1px solid var(--gold-rule);border-radius:8px;padding:24px 20px 16px;margin-bottom:8px;">
+    <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream-dim);margin-bottom:14px;">Cumulative Free Float — % of 13B Total Shares Outstanding</div>
+    <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;font-family:'DM Sans',system-ui,sans-serif;">
+
+      <!-- Chart background -->
+      <rect x="80" y="40" width="620" height="255" fill="#F9FAFB" rx="3"/>
+
+      <!-- Gridlines -->
+      <line x1="80" y1="295" x2="700" y2="295" stroke="#E5E7EB" stroke-width="1"/>
+      <line x1="80" y1="232" x2="700" y2="232" stroke="#D1D5DB" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="80" y1="170" x2="700" y2="170" stroke="#D1D5DB" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="80" y1="107" x2="700" y2="107" stroke="#D1D5DB" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="80" y1="44" x2="700" y2="44" stroke="#E5E7EB" stroke-width="1"/>
+
+      <!-- Y-axis labels -->
+      <text x="72" y="298" text-anchor="end" font-size="10" fill="#9CA3AF">0%</text>
+      <text x="72" y="235" text-anchor="end" font-size="10" fill="#9CA3AF">25%</text>
+      <text x="72" y="173" text-anchor="end" font-size="10" fill="#9CA3AF">50%</text>
+      <text x="72" y="110" text-anchor="end" font-size="10" fill="#9CA3AF">75%</text>
+      <text x="72" y="47" text-anchor="end" font-size="10" fill="#9CA3AF">100%</text>
+      <text transform="rotate(-90)" x="-168" y="18" text-anchor="middle" font-size="9" fill="#9CA3AF" letter-spacing="1">FREE FLOAT %</text>
+
+      <!-- Pre-Musk step area fill (gold) -->
+      <!-- y = 295 - (pct * 2.5). Events: IPO 4.3%=284, Q2 13.5%=261, D70 16.7%=253, D90 19.9%=245, D105 23.1%=237, D120 26.3%=229, Q3+D135 42.4%=189, Dec8 45.6%=181, Ext 49.6%=171 -->
+      <path d="M 80,295 L 100,295 L 100,284 L 175,284 L 175,261 L 222,261 L 222,253 L 250,253 L 250,245 L 273,245 L 273,237 L 296,237 L 296,229 L 325,229 L 325,189 L 408,189 L 408,181 L 650,181 L 650,171 L 700,171 L 700,295 Z"
+            fill="#B8965A" fill-opacity="0.10"/>
+
+      <!-- RSU tranche band highlight -->
+      <rect x="222" y="229" width="103" height="32" fill="#10B981" fill-opacity="0.12" rx="2"/>
+      <rect x="222" y="229" width="103" height="32" fill="none" stroke="#10B981" stroke-width="1" stroke-dasharray="3,2" rx="2" opacity="0.4"/>
+
+      <!-- Musk zone - red tint from x=650 to right (the step happens at x=650 after extended) -->
+      <!-- Actually Musk step is at x=700 (Jun 12 2027) -->
+
+      <!-- Step outline line (pre-Musk) -->
+      <polyline points="80,295 100,295 100,284 175,284 175,261 222,261 222,253 250,253 250,245 273,245 273,237 296,237 296,229 325,229 325,189 408,189 408,181 650,181 650,171 700,171"
+                fill="none" stroke="#B8965A" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+      <!-- Musk step — vertical jump (the dramatic moment) -->
+      <line x1="700" y1="171" x2="700" y2="44" stroke="#EF4444" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Musk at 100% horizontal -->
+      <line x1="700" y1="44" x2="760" y2="44" stroke="#EF4444" stroke-width="2.5" stroke-dasharray="4,3" opacity="0.6"/>
+      <!-- Musk vertical guide -->
+      <line x1="700" y1="44" x2="700" y2="295" stroke="#EF4444" stroke-width="1" stroke-dasharray="5,4" opacity="0.3"/>
+
+      <!-- Musk shaded zone (right of step) -->
+      <rect x="700" y="44" width="60" height="127" fill="#EF4444" fill-opacity="0.08"/>
+
+      <!-- EVENT DOTS -->
+      <circle cx="100" cy="284" r="4.5" fill="#B8965A" stroke="white" stroke-width="2"/>
+      <circle cx="175" cy="261" r="4.5" fill="#3B82F6" stroke="white" stroke-width="2"/>
+      <circle cx="325" cy="189" r="5" fill="#F59E0B" stroke="white" stroke-width="2"/>
+      <circle cx="408" cy="181" r="4.5" fill="#3B82F6" stroke="white" stroke-width="2"/>
+      <circle cx="650" cy="171" r="4" fill="#6B7280" stroke="white" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="700" cy="44" r="7" fill="#EF4444" stroke="white" stroke-width="2.5"/>
+
+      <!-- ── EVENT LABELS (leader lines + text, carefully spaced) ── -->
+
+      <!-- IPO label -->
+      <line x1="100" y1="295" x2="100" y2="306" stroke="#B8965A" stroke-width="1"/>
+      <text x="100" y="318" text-anchor="middle" font-size="9" font-weight="600" fill="#B8965A">IPO</text>
+      <text x="100" y="329" text-anchor="middle" font-size="8" fill="#6B7280">Jun 11 · 4.3%</text>
+
+      <!-- Q2 Earnings label — offset left to avoid RSU area -->
+      <line x1="175" y1="261" x2="155" y2="244" stroke="#3B82F6" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="152" y="239" text-anchor="end" font-size="9" font-weight="600" fill="#3B82F6">Q2 Earnings</text>
+      <text x="152" y="228" text-anchor="end" font-size="8" fill="#6B7280">Late Jul · 13.5%</text>
+      <text x="152" y="218" text-anchor="end" font-size="8" fill="#9CA3AF">+20% (or 30%) block</text>
+
+      <!-- RSU band label — above green band, centered -->
+      <text x="273" y="214" text-anchor="middle" font-size="9" font-weight="600" fill="#10B981">Employee RSUs</text>
+      <text x="273" y="205" text-anchor="middle" font-size="8" fill="#6B7280">Days 70–135 (Aug–Nov)</text>
+      <text x="273" y="196" text-anchor="middle" font-size="8" fill="#9CA3AF">5 tranches × 7%</text>
+
+      <!-- Q3 Earnings label — right side -->
+      <line x1="325" y1="189" x2="348" y2="175" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="351" y="171" text-anchor="start" font-size="9" font-weight="600" fill="#F59E0B">Q3 Earnings</text>
+      <text x="351" y="161" text-anchor="start" font-size="8" fill="#6B7280">Oct/Nov · 42.4%</text>
+      <text x="351" y="151" text-anchor="start" font-size="8" fill="#9CA3AF">+28% block trigger</text>
+
+      <!-- Dec 8 label — above -->
+      <line x1="408" y1="181" x2="408" y2="164" stroke="#3B82F6" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="408" y="158" text-anchor="middle" font-size="9" font-weight="600" fill="#3B82F6">180-Day Cliff</text>
+      <text x="408" y="148" text-anchor="middle" font-size="8" fill="#6B7280">Dec 8 · 45.6%</text>
+
+      <!-- Extended label — above, right-anchored -->
+      <line x1="650" y1="171" x2="650" y2="156" stroke="#6B7280" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="650" y="150" text-anchor="middle" font-size="8.5" fill="#6B7280">Extended</text>
+      <text x="650" y="141" text-anchor="middle" font-size="8" fill="#9CA3AF">Q2 2027 · ~49.6%</text>
+
+      <!-- MUSK label box — to the right of chart -->
+      <rect x="704" y="48" width="52" height="72" fill="#EF4444" rx="4" opacity="0.92"/>
+      <text x="730" y="66" text-anchor="middle" font-size="10" font-weight="700" fill="white">MUSK</text>
+      <text x="730" y="79" text-anchor="middle" font-size="8" fill="white">Jun 12, 2027</text>
+      <text x="730" y="91" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.9)">6.4B shares</text>
+      <text x="730" y="103" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.9)">+49% supply</text>
+      <text x="730" y="114" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.8)">$864B at IPO px</text>
+
+      <!-- Musk annotation line to the red dot -->
+      <line x1="703" y1="80" x2="700" y2="60" stroke="#EF4444" stroke-width="1"/>
+
+      <!-- ── X-AXIS QUARTER LABELS ── -->
+      <line x1="80" y1="295" x2="80" y2="300" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="237" y1="295" x2="237" y2="300" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="395" y1="295" x2="395" y2="300" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="553" y1="295" x2="553" y2="300" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="700" y1="295" x2="700" y2="300" stroke="#EF4444" stroke-width="1.5"/>
+
+      <text x="80" y="340" text-anchor="middle" font-size="9" fill="#6B7280">Jun '26</text>
+      <text x="237" y="340" text-anchor="middle" font-size="9" fill="#6B7280">Sep '26</text>
+      <text x="395" y="340" text-anchor="middle" font-size="9" fill="#6B7280">Dec '26</text>
+      <text x="553" y="340" text-anchor="middle" font-size="9" fill="#6B7280">Mar '27</text>
+      <text x="700" y="340" text-anchor="middle" font-size="9" font-weight="600" fill="#EF4444">Jun '27</text>
+
+      <!-- Legend -->
+      <rect x="80" y="350" width="9" height="8" fill="#B8965A" rx="1"/>
+      <text x="93" y="357" font-size="8" fill="#6B7280">IPO Float</text>
+      <rect x="144" y="350" width="9" height="8" fill="#3B82F6" rx="1"/>
+      <text x="157" y="357" font-size="8" fill="#6B7280">Core Investors / VCs</text>
+      <rect x="264" y="350" width="9" height="8" fill="#10B981" rx="1"/>
+      <text x="277" y="357" font-size="8" fill="#6B7280">Employee RSUs</text>
+      <rect x="358" y="350" width="9" height="8" fill="#F59E0B" rx="1"/>
+      <text x="371" y="357" font-size="8" fill="#6B7280">Q3 Earnings Trigger</text>
+      <rect x="476" y="350" width="9" height="8" fill="#EF4444" rx="1"/>
+      <text x="489" y="357" font-size="8" fill="#6B7280">Musk — 366-day lockup (no early release)</text>
+
+    </svg>
+  </div>
+
+
+  <div class="two-col" style="margin-top:12px;margin-bottom:0;">
+    <div class="callout callout-risk">
+      <div class="callout-eye">Key Supply Pressure Points</div>
+      <p><strong>Q2 Earnings (Late July 2026):</strong> The first meaningful supply event. Up to 20% of the 180-day block unlocks. If the stock closes ≥$175.50 (30%+ above IPO) for 5 of 10 prior trading days, an additional 10% bonus block also releases — early investors can sell up to 30% of their locked holdings at the first opportunity.</p>
+      <p><strong>Q3 Earnings + Day 135 (Oct/Nov 2026):</strong> The largest single event within the 180-day window — 28% of the block (~1.68B shares) releases based on earnings. This is the moment when institutional holders who want liquidity can meaningfully exit.</p>
+      <p><strong>June 12, 2027 (Musk):</strong> The most significant supply event in SPCX history. 6.4 billion shares — 49% of total outstanding — become eligible to sell. At $135/share, that's $864 billion in eligible supply entering the market simultaneously. Musk has zero early release provisions; his entire stake is locked until this date.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-eye">Investment Strategy Implications</div>
+      <p><strong>The scarcity premium is real but temporary.</strong> At IPO, only 4.3% of shares traded — structural scarcity drove the immediate post-IPO price spike. As each tranche unlocks, that scarcity unwinds. Historical precedent (Facebook, Rivian, Beyond Meat) suggests lockup expiration events create near-term price pressure as insider sellers meet market demand.</p>
+      <p><strong>The window between December 2026 and June 2027</strong> — after the 180-day lockup fully expires but before Musk's 6.4B shares unlock — is the period where the float is most established at ~54% but the largest supply shock hasn't arrived. This may be the most analytically interesting window for position-building if price corrects into the tranche events.</p>
+      <p><strong>Musk's 366-day lockup</strong> is a deliberate long-term commitment signal. Bulls cite it as a tail-risk reducer. Bears note it also means he cannot sell to fund other ventures for over a year. After June 12, 2027, monitor carefully.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 4: TESLA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="tsla">
+  <div class="sec-eye">Section 4</div>
+  <h2 class="sec-title">Tesla (TSLA) — The Hardware</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">The application layer for SpaceX's platform</div>
+    <p>Tesla is undergoing the most significant pivot in its history: from electric vehicle manufacturer to <strong>physical AI platform company</strong>. Elon ended Model S/X production in January 2026 to convert Fremont into an Optimus factory targeting 1 million robots/year. At Giga Texas, a dedicated Optimus factory is under construction targeting 10 million units/year. Musk projects $10 trillion in long-term Optimus revenue and has stated that 80% of Tesla's future value comes from robots, not cars.</p>
+    <p>The near-term catalysts are concrete: Cybercab (robotaxi) entering volume production in late 2026; Optimus Gen 3 line running at Fremont by mid-2026; energy storage growing 50%+ annually with 39.5% gross margins in Q1 2026. The risk is real: 75% of revenue still comes from a vehicle lineup losing share to Chinese competition, and the timeline for Optimus commercial revenue remains uncertain. Tesla is also a $2B equity holder in SpaceX and a co-builder of Terafab — meaning it benefits directly from SpaceX's AI infrastructure buildout without carrying SpaceX's current losses.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell"><div class="stat-label">Market Cap</div><div class="stat-value">~$1.5T</div></div>
+    <div class="stat-cell"><div class="stat-label">Trailing P/E</div><div class="stat-value">185x</div><div class="stat-note">Priced for AI/robotics future</div></div>
+    <div class="stat-cell"><div class="stat-label">Q1 2026 Gross Margin</div><div class="stat-value">21.1%</div><div class="stat-note">Recovered; Energy at 39.5%</div></div>
+    <div class="stat-cell"><div class="stat-label">SpaceX Equity Stake</div><div class="stat-value">$2B</div><div class="stat-note">Disclosed Q1 2026 filing</div></div>
+    <div class="stat-cell"><div class="stat-label">2026 Capex</div><div class="stat-value">$25B+</div><div class="stat-note">AI infrastructure + Optimus factories</div></div>
+    <div class="stat-cell"><div class="stat-label">Optimus 2026 Target</div><div class="stat-value">50-100K</div><div class="stat-note">Units; Fremont line activating mid-year</div></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Optimus: The Core Bet</h3>
+      <div class="prose">
+        <p>Optimus is not a side project. Tesla ended the Model S and Model X — combined, 15 years of its flagship vehicles — to convert that factory to robot production. The capital allocation signal is unambiguous.</p>
+        <p>At $20-30K per robot (long-term target), replacing human labor that costs $35-50K annually plus benefits, the economics for enterprise customers are immediate at scale. The bill of materials is dominated by actuators (56% of cost) — a problem Tesla intends to solve through vertical integration, the same playbook that made their battery costs competitive.</p>
+        <p>The Q3 2025 earnings call was striking: Elon spent almost no time on cars. He announced Optimus V3 for Q1 2026, targets of 1 million units/year production capacity, and projected the "largest product in human history." This language is consistent across multiple calls and reflects a genuine strategic pivot, not messaging.</p>
+      </div>
+      <table>
+        <thead><tr><th>Year</th><th>Units Target</th><th>Cost Target</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>2025</td><td>5,000–10,000</td><td>$43K</td><td><span class="badge badge-watch">Hundreds produced</span></td></tr>
+          <tr><td>2026</td><td>50,000–100,000</td><td>$30K</td><td><span class="badge badge-watch">Fremont line activating</span></td></tr>
+          <tr><td>2027</td><td>1M / yr capacity</td><td>$25K</td><td><span class="badge badge-loss">Target / Unconfirmed</span></td></tr>
+          <tr><td>2030</td><td>10M / yr</td><td>$20K</td><td><span class="badge badge-loss">Aspirational</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Full Self-Driving + Cybercab</h3>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Robotaxi Launch — 2026</div>
+        <p>Tesla launched unsupervised robotaxi service in Austin and San Francisco in test markets. Cybercab (steering-wheel-less autonomous taxi) entering volume production late 2026. If FSD achieves commercial scale, Tesla transitions from one-time hardware sales to recurring mobility-as-a-service revenue. Analysts estimate $1T in value unlocked if robotaxi achieves mass deployment.</p>
+      </div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin:20px 0 12px;">Energy Storage — The Underappreciated Division</h3>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Q1 2026: 8.8 GWh · 39.5% Gross Margin</div>
+        <p>Tesla Energy (Megapack utility storage) is growing faster than the EV business with higher margins. Q1 2026 was a record deployment. The energy storage division is already valued by some analysts as a $300B+ standalone business. It is the cleanest earnings story in the Tesla portfolio — no robotaxi uncertainty, no autonomous regulation, just infrastructure selling into a structural power grid upgrade cycle.</p>
+      </div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin:20px 0 12px;">Tesla ↔ SpaceX Integration</h3>
+      <div class="callout">
+        <div class="callout-eye">A Single Integrated System</div>
+        <p>Tesla: $2B equity in SpaceX. Joint Terafab construction (AI5 chip for vehicles/robots, D3 for orbital data centers). Starlink connectivity for Tesla FSD vehicles globally. Shared Optimus deployment on Mars missions (2027+ via Starship). Musk has discussed potential merger of SpaceX and Tesla. If that happens, Tesla holders participate in the combined entity from a lower entry valuation multiple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 5: TSLA vs SPCX -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="compare">
+  <div class="sec-eye">Section 5</div>
+  <h2 class="sec-title">TSLA vs. SPCX: Which to Own</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">Tesla is the better risk-adjusted bet for a 5-10 year horizon</div>
+    <p>If the physical intelligence thesis is correct, both companies win — they are co-builders of the same platform. The question is which provides better risk-adjusted exposure at current valuations. Our conclusion: <strong>Tesla at 5-10 years; SpaceX at 10-20 years.</strong> Tesla has positive earnings, real products in production, and meaningful SPCX exposure through its $2B equity stake and Terafab partnership. SpaceX at 94x revenue prices in near-perfect execution on technologies that don't fully exist yet. For a 20-year horizon, SpaceX is the infrastructure monopoly; for a 5-10 year horizon, Tesla is the same thesis with a margin of safety.</p>
+    <p>The wildcard: a SpaceX acquisition of Tesla. Musk has reportedly discussed this with colleagues. If it happens, Tesla holders participate in the combined entity. Given current relative valuations, they participate from the cheaper entry point.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Dimension</th><th>TSLA</th><th>SPCX</th><th>Advantage</th></tr></thead>
+    <tbody>
+      <tr><td>Valuation multiple</td><td>185x P/E (profitable)</td><td>94x revenue (loss-making)</td><td><span class="badge badge-gain">TSLA</span></td></tr>
+      <tr><td>Current earnings</td><td>Positive; 21.1% gross margin Q1</td><td>($4.9B) net loss 2025-26</td><td><span class="badge badge-gain">TSLA</span></td></tr>
+      <tr><td>Infrastructure moat</td><td>FSD data; Optimus BOM</td><td>Launch monopoly; orbital compute</td><td><span class="badge badge-watch">SPCX (stronger)</span></td></tr>
+      <tr><td>Physical intelligence thesis</td><td>Application layer (robots)</td><td>Infrastructure layer (compute/connectivity)</td><td>Equal — different roles</td></tr>
+      <tr><td>Cross-exposure</td><td>$2B SPCX stake; Terafab partner</td><td>Limited TSLA exposure</td><td><span class="badge badge-gain">TSLA has SPCX embedded</span></td></tr>
+      <tr><td>Governance risk</td><td>Musk attention divided; board functions</td><td>82% voting control; no governance</td><td><span class="badge badge-gain">TSLA</span></td></tr>
+      <tr><td>Competition risk</td><td>Chinese EVs, Figure AI, OpenAI Robotics</td><td>No meaningful launch competitor</td><td><span class="badge badge-watch">SPCX (more defensible)</span></td></tr>
+      <tr><td>5-10 year horizon</td><td>Lower entry premium; real earnings; Optimus proof points 2027-28</td><td>Priced for 2030-2035 outcomes</td><td><span class="badge badge-gain">TSLA</span></td></tr>
+      <tr><td>10-20 year horizon</td><td>Depends on robotaxi/Optimus execution</td><td>Orbital infrastructure monopoly; Terafab chips; global AI backbone</td><td><span class="badge badge-watch">SPCX</span></td></tr>
+      <tr><td>Merger scenario</td><td>Participate at lower multiple</td><td>Likely the acquirer</td><td><span class="badge badge-gain">TSLA holders benefit most</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warn">
+    <div class="callout-eye">Position Sizing Note</div>
+    <p>Both names carry significant execution risk and elevated valuations. Neither is appropriate as a concentrated single position. The thesis is a 5-20 year secular trend — position sizing should reflect that timeframe and the associated volatility. We are not financial advisors; these are analytical conclusions for debate with your licensed investment advisors.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 6: ACQUISITIONS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="acquisitions">
+  <div class="sec-eye">Section 6</div>
+  <h2 class="sec-title">Acquisitions &amp; Capital Strategy</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">The IPO created a weapon; Cursor was the first shot</div>
+    <p>SpaceX raised $86.2 billion. The official use of proceeds (AI compute infrastructure, Starlink expansion, Starship development) tells the surface story. The real story: <strong>the IPO transformed SpaceX's stock into an acquisition currency with a liquid market price</strong>. The Cursor acquisition — $60 billion in stock, zero cash, four days after IPO — confirmed it. At 3.4% dilution for a $2.6B ARR business with 4 million developers, this is textbook "use a high-flying public stock to buy revenue." Expect more acquisitions of this structure. The $86.2B in actual cash is the reserve for infrastructure buildout. The stock is the weapon for everything else.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">The Cursor Acquisition — What It Means</h3>
+      <div class="prose">
+        <p>Cursor (Anysphere) crossed $1 billion ARR in November 2025. By Q1 2026, annualized B2B revenue was $2.6 billion. Customers include Stripe, Adobe, and NVIDIA — Jensen Huang called it his favorite enterprise AI service. SpaceX paid $60 billion in stock (15x revenue) for an enterprise developer platform that was also losing market share: from 41% of the AI coding market in June 2025 to 26% by May 2026, with Anthropic's Claude Code capturing ~50% of the category.</p>
+        <p>The strategic logic is not just "fix Grok's coding problem." Cursor gives SpaceX <strong>the enterprise customer relationship</strong> — the direct line to every major software organization on Earth. In the physical intelligence thesis, whoever writes the code that tells robots what to do is a critical platform layer. Cursor + Grok + xAI = the coding and intelligence layer of the robot civilization.</p>
+        <p>Risk: Cursor's neutrality (working with Claude, GPT, Gemini, and other models) was a core selling point. Bringing it inside SpaceX/Grok converts it from "model-agnostic tool" to "captive Grok-first product." Enterprise buyers will re-evaluate. Watch Q3 2026 customer retention data as the deal closes.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">What SpaceX Still Needs to Acquire</h3>
+      <div class="card-grid" style="grid-template-columns:1fr;">
+        <div class="card">
+          <div class="card-ticker">Priority 1 — Critical Gap</div>
+          <div class="card-name">Power / Energy Partnership</div>
+          <div class="card-body">Terafab needs 10+ gigawatts. No power contract announced. The most urgent missing piece — without a long-term power supply agreement, Terafab's timeline is at risk. Vistra (Texas) and Constellation (nuclear) are the logical counterparties. Expect an announcement in the next 6-12 months, either a contract or an acquisition.</div>
+        </div>
+        <div class="card">
+          <div class="card-ticker">Priority 2 — Physical Intelligence Gap</div>
+          <div class="card-name">Industrial Deployment / Computer Vision</div>
+          <div class="card-body">SpaceX can build the AI brain and Tesla can build the robot body, but neither controls the factory floor where robots get deployed. A company in industrial automation integration (Rockwell, Cognex, Mobileye) bridges the gap between robot hardware and actual operational deployment. This acquisition enables Optimus to scale beyond Tesla's own factories.</div>
+        </div>
+        <div class="card">
+          <div class="card-ticker">Priority 3 — Inevitable</div>
+          <div class="card-name">Neuralink (eventual)</div>
+          <div class="card-body">The human-machine interface layer cannot remain outside the public company stack indefinitely. If the physical intelligence thesis plays out, Neuralink is the endpoint — the way humans interact with robot-operated abundance. A Neuralink acquisition by SpaceX or a Neuralink IPO is a matter of when, not if. Elon controls it; he decides the timing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 7: STARFALL & STARMIND -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="starsystems">
+  <div class="sec-eye">Section 7</div>
+  <h2 class="sec-title">Starfall &amp; Starmind — Two New Physical Systems</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">Two June 2026 reveals that extend the platform into orbit</div>
+    <p>Within 48 hours in late June 2026, SpaceX revealed two new product lines that directly extend the physical intelligence thesis off the Earth's surface. <strong>Starmind</strong> is the formal name for the orbital AI compute constellation (the AI1 satellites): up to one million solar-powered satellites that run AI inference in orbit and beam results to Earth — making SpaceX "the landlord of AI compute the way Starlink made it the landlord of satellite internet." <strong>Starfall</strong> is a mass-producible reentry capsule for in-space manufacturing and point-to-point cargo delivery — a disk-shaped vehicle that returns goods manufactured in microgravity (pharmaceuticals, semiconductors, fiber optics) back to Earth.</p>
+    <p>These are not unrelated side projects. Starmind is the compute and intelligence layer in orbit; Starfall is the manufacturing-and-return layer in orbit. Together with Terafab (chips), Starlink (connectivity), and Optimus (terrestrial labor), they complete a picture in which SpaceX operates the physical intelligence platform across <em>both</em> the terrestrial and orbital domains. Critically, both are physical systems — they require the same actuator, sensor, structural, and compute supply chain analyzed in Section 10, in radiation-hardened, vacuum-rated form.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Starmind — AI Compute in Orbit</h3>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Confirmed by Musk · June 24, 2026</div>
+        <p>Up to <strong>one million AI satellites</strong> filed with the FCC (January 30, 2026) as an orbital AI compute layer. First AI1 hardware unveiled June 8. Where a Starlink satellite is a fast data pipe, a Starmind satellite is a <strong>server</strong> — it computes data through onboard AI inference, then beams results to Earth within milliseconds, without the data ever traveling to a terrestrial data center.</p>
+      </div>
+      <table>
+        <thead><tr><th>AI1 Satellite Spec</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Height / wingspan</td><td>20m tall / 70m deployed (wider than a 747-8)</td></tr>
+          <tr><td>Compute per satellite</td><td>120 kW avg, 150 kW peak (≈ one ground server rack)</td></tr>
+          <tr><td>Payload per Starship launch</td><td>30–50 AI1 satellites</td></tr>
+          <tr><td>Prototype launch</td><td>Early 2027 (2 units)</td></tr>
+          <tr><td>Volume production</td><td>End of 2027 at new "Gigasat" facility</td></tr>
+          <tr><td>Networking</td><td>Optical laser links between satellites + to Starlink</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <div class="callout-eye">Why Orbit Wins (Musk's Argument)</div>
+        <p>Terrestrial data centers face hard limits: physical space, community opposition, and power/water consumption that is increasingly difficult to permit. Space offers unlimited solar power, natural vacuum cooling, and no zoning boards. Musk stated June 8 he expects space to become the <strong>lowest-cost location to deploy AI compute within two to three years.</strong> No land acquisition, no power grid approval, no ground cooling infrastructure.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Starfall — The Factory in Space</h3>
+      <div class="callout callout-gain">
+        <div class="callout-eye">First Demo Flight · June 23, 2026</div>
+        <p>An uncrewed, mass-producible reentry capsule for <strong>in-space manufacturing and point-to-point cargo delivery</strong>. First demonstration launched on a Falcon 9 from Cape Canaveral. SpaceX stated it will "enable affordable, routine access to the microgravity environment for scientific research and in-space manufacturing" and "create a self-sustaining commercial in-space manufacturing market."</p>
+      </div>
+      <table>
+        <thead><tr><th>Starfall Spec</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Shape</td><td>Disk (3.1m diameter × 0.75m tall)</td></tr>
+          <tr><td>Empty mass / payload</td><td>~2,100 kg / up to 1,000 kg</td></tr>
+          <tr><td>Launch vehicle</td><td>Falcon 9 or Starship</td></tr>
+          <tr><td>Recovery</td><td>Parachute-assisted splashdown</td></tr>
+          <tr><td>Target markets</td><td>Pharma crystals, semiconductors, protein, fiber</td></tr>
+          <tr><td>First reported</td><td>Bloomberg, July 2025 (confidential project)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <div class="callout-eye">Why Microgravity Manufacturing Matters</div>
+        <p>Some products are fundamentally better made in space. Pharmaceutical crystals grown in microgravity have more uniform structures; semiconductors made in vacuum have fewer impurities; fiber optic cable (ZBLAN) produced in zero-G has dramatically less signal loss. Starfall is the delivery mechanism for a space-manufacturing economy — and Starmind is the intelligence layer that would coordinate those autonomous orbital factories. Competitors exist (Varda Space, Outpost) but none has SpaceX's launch-cost advantage and vertical integration.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn" style="margin-bottom:0;">
+    <div class="callout-eye">How This Ties to the Thesis · Aureus Analysis</div>
+    <p><strong>Starmind closes the bridge-financing loop from Section 3.</strong> The Colossus terrestrial GPU rentals (2026–2029) generate the cash. Starmind volume production (end of 2027) is what eventually makes those terrestrial rentals obsolete — solar-powered orbital compute has no power bill, no real estate cost, and no cooling expense. When SpaceX invokes its 90-day exit clauses to reclaim Colossus compute, the strategic rationale is that orbital compute has become structurally cheaper. The terrestrial fleet then cascades into inference while Starmind scales as the long-term compute layer. Starfall, meanwhile, opens an entirely new vertical — orbital manufacturing — that uses the same physical-AI supply chain (Section 10) in hardened form, and which only SpaceX has the launch economics to serve at scale.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 8: TERAFAB -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="terafab">
+  <div class="sec-eye">Section 8</div>
+  <h2 class="sec-title">Terafab &amp; Infrastructure Buildout</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">The most ambitious chip manufacturing project in human history — and a $25-30B equipment buying event</div>
+    <p>Terafab is a joint venture of SpaceX, Tesla, and Intel to build a vertically integrated semiconductor fabrication facility in Texas targeting one terawatt of annual AI compute output. Phase 1 (Grimes County, TX): $55 billion initial investment, $119 billion full buildout — exceeding the entire CHIPS Act authorization in a single project. The prototype fab is rising now at Giga Texas (Austin). The full-scale fab at Gibbons Creek Reservoir has received its property tax abatement and begins construction in 2026. Chip analysts estimate first wafer output no earlier than 2028-2029 under aggressive timelines.</p>
+    <p>The investment implication: SpaceX doesn't need Terafab to succeed for the beneficiaries to win. <strong>ASML, Applied Materials, Lam Research, and KLA will sell $25-30 billion in equipment to Terafab over 2027-2028 regardless of whether Terafab ultimately works.</strong> The equipment suppliers get paid before the fab produces a single chip. This is the highest-certainty beneficiary position in the entire ecosystem.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Terafab Specifications</h3>
+      <table>
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1 investment</td><td>$55 billion (Grimes County)</td></tr>
+          <tr><td>Full buildout</td><td>$119 billion</td></tr>
+          <tr><td>Facility size</td><td>Up to 10 million square meters</td></tr>
+          <tr><td>Power requirement</td><td>10+ gigawatts</td></tr>
+          <tr><td>Site</td><td>Gibbons Creek Reservoir, TX (water access)</td></tr>
+          <tr><td>Process node</td><td>Intel 14A (full scale); Intel 18A (initial)</td></tr>
+          <tr><td>Chip types</td><td>D3 (space-hardened) + AI5 (automotive/robot)</td></tr>
+          <tr><td>Annual output target</td><td>1 terawatt of AI compute</td></tr>
+          <tr><td>Intel relationship</td><td>Process partner + foundry; not standalone fab</td></tr>
+          <tr><td>First wafer estimate</td><td>2028-2029 (analyst consensus)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout callout-warn">
+        <div class="callout-eye">Honest Execution Risk</div>
+        <p>Bernstein analysts estimated reaching 1 terawatt of annual compute would require $5 trillion in total capital and up to 358 individual fabs. Musk's $119 billion figure covers a single facility. The ambition is extraordinary; the execution timeline is necessarily multi-decade. ASML's EUV order book is fully allocated through 2027, meaning Terafab's equipment procurement faces an immediate bottleneck. The Intel partnership solves this partially — leveraging Intel's existing equipment allocations — but Terafab is likely more accurately described as "an Intel fab expansion with SpaceX, Tesla, and xAI as anchor customers."</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Who Benefits — and When</h3>
+      <div class="card-grid" style="grid-template-columns:1fr;">
+        <div class="card">
+          <div class="card-ticker">ASML · Certain</div>
+          <div class="card-name">EUV Lithography Monopoly</div>
+          <div class="card-body">The only supplier of extreme ultraviolet lithography machines (~$400M each). No chip fab — including Terafab — can produce advanced chips without ASML equipment. CEO confirmed direct talks with Musk. ASML stock up 69% YTD as of mid-2026. Order book bottleneck means Terafab pays premium to access equipment. <span class="badge badge-gain">Structurally unavoidable</span></div>
+        </div>
+        <div class="card">
+          <div class="card-ticker">AMAT · LRCX · KLAC</div>
+          <div class="card-name">Fab Equipment Suppliers</div>
+          <div class="card-body">Applied Materials (deposition), Lam Research (etch), KLA (process control). Combined ~$25-30B in equipment demand from Terafab over 2027-28, per Lynx analyst estimates. All benefit regardless of whether Terafab achieves its 1 TW ambition. Equipment orders come years before a fab produces chips. <span class="badge badge-gain">Direct, certain beneficiaries</span></div>
+        </div>
+        <div class="card">
+          <div class="card-ticker">INTC · High Risk / High Reward</div>
+          <div class="card-name">Intel</div>
+          <div class="card-body">Terafab anchor customer for Intel Foundry. Intel stock had its best month ever in April 2026 (+100%) on the announcement. But at 123x forward P/E with 65% yield at 18A node, execution risk is real. Intel has underdelivered on foundry timelines historically. The Terafab thesis is transformative for Intel IF it executes. <span class="badge badge-watch">High conviction requires Intel to deliver</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Gigabay, Gigasat &amp; Starship Infrastructure</h3>
+  <div class="callout callout-gain">
+    <div class="callout-eye">2026–2027 Construction Milestones</div>
+    <p>Two <strong>Gigabay</strong> facilities (Florida Cape Canaveral + Texas Starbase) targeted for completion end of 2026. A new <strong>Gigasat</strong> facility is planned for volume production of Starmind AI1 satellites beginning end of 2027 — the orbital-compute analog to Terafab's chip output. Starship V3 (Raptor 3 engines) first test flight completed May 22, 2026; payload delivery to orbit expected H2 2026. Each Starship launch can carry 60 V3 Starlink satellites (vs. 27 for Falcon 9), or 30–50 Starmind AI1 satellites — a 20x bandwidth improvement per launch, with V3 satellites delivering 1 Tbps each (from ~96 Gbps today). The combined facility footprint — Terafab, two Gigabays, Gigasat, and Starfactory — represents one of the largest simultaneous industrial construction programs in American history.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 9: ECOSYSTEM -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="ecosystem">
+  <div class="sec-eye">Section 9</div>
+  <h2 class="sec-title">The Ecosystem — Rising Tide, Rising Ships</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">Apple didn't capture Uber, Instagram, or Spotify. This platform won't capture everything either.</div>
+    <p>The iPhone (2007) created a $2T+ ecosystem of companies that captured value by building on top of Apple's platform. Apple captured hardware margin and App Store fees. It did not capture Uber ($130B), Instagram, Spotify, or DoorDash. The physical intelligence platform will work the same way. Tesla + SpaceX build the platform. The ecosystem captures the applications. <strong>The most important investment opportunities in this ecosystem may be companies that haven't IPO'd yet — or companies that don't exist yet.</strong> The "App Store for robots" — the deployment, monetization, and management platform for robot applications — remains unoccupied. Whoever builds it captures the equivalent of Apple's 30% App Store cut on every robot task performed.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;">Layer 1 — Hardware Components (The Corning / Qualcomm Layer)</h3>
+  <div class="card-grid">
+    <div class="card" style="border-left:3px solid #16a34a;">
+      <div class="card-ticker">MP · Highest Conviction</div>
+      <div class="card-name">MP Materials</div>
+      <div class="card-body">Only US integrated mine-to-magnet company. NdFeB magnets: 3.5 kg per robot, critical for every actuator. Apple + GM supply agreements. DoD strategic partnership with floor price guarantee. Fort Worth Texas facility producing commercial magnets as of December 2025. China restricted rare earth exports April 2025 — this is the domestic alternative. Tesla and SpaceX MUST solve this dependency. MP is the only answer at scale today.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Strategic national asset underpriced as industrial minerals company</div>
+    </div>
+    <div class="card" style="border-left:3px solid #16a34a;">
+      <div class="card-ticker">ASML · Monopoly</div>
+      <div class="card-name">ASML Holding</div>
+      <div class="card-body">The only EUV lithography supplier on Earth. No Terafab without ASML. No TSMC, no Samsung, no Intel advanced nodes without ASML. ASML CEO confirmed direct discussions with Musk. Stock up 69% YTD (mid-2026). $400M per machine. A monopoly without a substitute is the most defensible position in the ecosystem.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> True monopoly — no competing technology exists</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">HDS · Tokyo-listed</div>
+      <div class="card-name">Harmonic Drive Systems</div>
+      <div class="card-body">Japanese manufacturer of strain-wave gearboxes. The joint of every robot — used in Optimus, Atlas, Figure 02, and every other humanoid platform. Zero backlash, compact, high gear reduction. Fewer than 5 global suppliers at scale. Green Harmonic (China) is competing at 30-40% lower prices, but HDS retains quality premium. Benefits from ALL robot platforms regardless of which one wins.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Platform-agnostic hardware component monopoly</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">CGNX</div>
+      <div class="card-name">Cognex</div>
+      <div class="card-body">Machine vision — the eyes of robot quality control. Already deployed in Tesla Gigafactories. As robot production scales to millions per year, quality inspection requirements scale proportionally. Cognex grows with every factory that adds automation regardless of brand.</div>
+      <div class="card-conf"><div class="dot dot-m"></div> Factory vision is platform-agnostic</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Layer 2 — Infrastructure (The AT&amp;T / Verizon Layer)</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-ticker">VST · Texas Power</div>
+      <div class="card-name">Vistra Energy</div>
+      <div class="card-body">Largest competitive power generator in US; predominantly Texas-based. Terafab needs 10+ GW with no announced power contract. Geographic alignment with Grimes County is direct. No SpaceX power deal has been disclosed — this is the gap that needs filling within 6-12 months.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Most likely Terafab power partner</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">CEG · Nuclear</div>
+      <div class="card-name">Constellation Energy</div>
+      <div class="card-body">Nuclear baseload power — exactly what AI data centers and fabs want. Already signing deals with Microsoft and other tech companies for 24/7 carbon-free power. AI infrastructure requires reliability that wind/solar alone cannot provide. Nuclear is the preferred AI power source.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> AI's preferred power source</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">NUE · Infrastructure Play</div>
+      <div class="card-name">Nucor Steel</div>
+      <div class="card-body">Largest domestic steel producer. Terafab (100M sq meters) + two Gigabays (Florida + Texas) + Starfactory expansion = one of the largest simultaneous construction programs in US history. Structural steel demand from these projects is direct and near-term. Domestic sourcing preference given geopolitical environment reinforces the thesis. Benefits from any significant US industrial infrastructure buildout regardless of Terafab's long-term success.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Existing position — thesis materially reinforced</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">LIN + APD · Duopoly</div>
+      <div class="card-name">Linde / Air Products</div>
+      <div class="card-body">Industrial gas duopoly. Semiconductor fabs consume nitrogen, argon, hydrogen, silane, and specialty gases continuously. Terafab is a permanent long-term industrial gas customer once operational. Between Linde and Air Products, they supply 90%+ of global fab gases. Either name captures the Terafab contract.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Structurally unavoidable in any fab buildout</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">VRT</div>
+      <div class="card-name">Vertiv Holdings</div>
+      <div class="card-body">Data center cooling infrastructure. xAI's Colossus data centers + orbital ground stations + Terafab generate heat at extraordinary scale. Vertiv is already benefiting from AI data center buildout. The SpaceX/xAI infrastructure adds another significant demand source.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> AI data center cooling — already executing</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">PWR</div>
+      <div class="card-name">Quanta Services</div>
+      <div class="card-body">Largest electrical transmission contractor in US. Getting 10+ GW of power TO Terafab requires significant grid transmission work. Every new power generation source needs lines to the facility. Quanta is the contractor that builds those lines.</div>
+      <div class="card-conf"><div class="dot dot-m"></div> Grid buildout beneficiary</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Layer 3 — The Software Platform (The App Store That Doesn't Exist Yet)</h3>
+  <div class="callout" style="margin-bottom:16px;">
+    <div class="callout-eye">The Blank Canvas — Most Important Opportunity</div>
+    <p>Apple's App Store generated $89 billion in revenue in 2024 — 30% of every dollar transacted on the platform. If SpaceX + Tesla build a robot platform and someone builds the equivalent marketplace for robot applications, that company will be worth more than most of the component suppliers combined. <strong>The "App Store for robots" is unoccupied.</strong> The company that builds robot task management, deployment orchestration, and application monetization infrastructure — the platform through which businesses access Optimus capabilities — captures a percentage of every physical task performed by a robot. This company hasn't IPO'd yet. It may not exist. Watch for it.</p>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-ticker">NVDA · Simulation & Compute</div>
+      <div class="card-name">NVIDIA (Omniverse / Isaac)</div>
+      <div class="card-body">Dominant robot simulation platform. xAI confirmed "NVDA house" — all training compute uses NVIDIA. $300B in planned xAI capex flows through NVDA until Terafab produces its own chips (~2028+). Isaac Sim is where Optimus learns to walk before it walks. NVDA benefits from ALL robot platforms, not just Tesla.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> xAI compute dependency lasts through Terafab chip production era (~2028+)</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">ANSS</div>
+      <div class="card-name">Ansys</div>
+      <div class="card-body">Physics simulation software used in aerospace and industrial engineering. As robot complexity grows, physics-accurate simulation is required before real-world deployment. Already used in SpaceX engineering workflows. Benefits from growing robot industry broadly.</div>
+      <div class="card-conf"><div class="dot dot-m"></div> Simulation picks and shovels</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">PLTR</div>
+      <div class="card-name">Palantir</div>
+      <div class="card-body">Operational AI for complex physical systems. Already deployed in manufacturing and defense. As robot fleets require coordination and decision intelligence, Palantir's "physical AI" positioning becomes structurally relevant for enterprise deployment at scale.</div>
+      <div class="card-conf"><div class="dot dot-m"></div> Industrial AI deployment layer</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Layer 4 — Adopting Industries (Companies Whose Economics Improve)</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-ticker">DE</div>
+      <div class="card-name">John Deere</div>
+      <div class="card-body">Most advanced agricultural automation company in the world. Autonomous tractors. Computer vision for crop identification. Bear Flag Robotics (acquired). Rural agriculture is the perfect Starlink + Optimus deployment scenario: remote connectivity + physical labor replacement. Deere has the customer relationships and domain expertise to deploy Optimus in agriculture faster than anyone else.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Best positioned for farm-to-robot deployment</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">ISRG</div>
+      <div class="card-name">Intuitive Surgical</div>
+      <div class="card-body">da Vinci surgical robot: $8B+ revenue, 15%+ growth, operating inside human bodies with surgeon-level precision. The existence proof that robots can perform the most high-value physical tasks imaginable. Physical intelligence applied to medicine. Benefits from general AI advancement and is the natural endpoint of physical intelligence in healthcare.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Already proven at scale in highest-value application</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">AMZN</div>
+      <div class="card-name">Amazon</div>
+      <div class="card-body">Owns Agility Robotics. 1M+ fulfillment workers globally. Each robot replacing $35K/yr in labor improves economics asymptotically. AWS also benefits from hosting robot AI and management software. Amazon is simultaneously the largest customer for robot deployment AND a major beneficiary of AI compute growth through AWS.</div>
+      <div class="card-conf"><div class="dot dot-h"></div> Customer + platform beneficiary</div>
+    </div>
+    <div class="card">
+      <div class="card-ticker">Unidentified</div>
+      <div class="card-name">Elder Care Robot Companies</div>
+      <div class="card-body">10,000 US baby boomers turn 65 every day. Nursing shortage is structural and worsening. Japan already deploys nursing assistance robots due to demographic pressure. The company that cracks affordable, safe elder care robots at home will be worth hundreds of billions. It doesn't exist at scale yet. Watch for early-stage companies in this category — the TAM is enormous and the demographic tailwind is structural.</div>
+      <div class="card-conf"><div class="dot dot-l"></div> Watch for this IPO — the killer app for Optimus</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Layer 5 — New Categories (The Uber / Instagram Layer)</h3>
+  <div class="two-col">
+    <div>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Robot Labor Marketplace</div>
+        <p>The "Uber for physical work." A platform where businesses request robot labor for specific tasks and a fleet of Optimus units dispatches to perform them. The operator captures a percentage of every physical task — like Uber taking 25% of every ride. Global physical labor is a $50T annual market. At 30% robot penetration over 20 years and 5% platform take rate, this is a $750B business. <strong>This company does not exist yet.</strong></p>
+      </div>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Robot as a Service (RaaS)</div>
+        <p>Instead of buying an Optimus for $20-30K, a restaurant pays $500/month for a robot dishwasher. The company that builds financing, deployment, maintenance, and software update infrastructure for subscribed robots captures durable recurring revenue from the entire robot installed base. This is the "carrier plan" equivalent — and it's the business model that makes robots accessible to SMBs that can't afford capital purchases.</p>
+      </div>
+    </div>
+    <div>
+      <div class="callout callout-warn">
+        <div class="callout-eye">Physical Intelligence Insurance</div>
+        <p>When a robot causes injury, who pays? Current liability frameworks assume human error. Autonomous robot liability is legally undefined. The actuarial company that builds underwriting models for AI-operated systems at scale — and writes the first policies — creates a new insurance category. Every company deploying robots buys this. Progressive, Chubb, and AIG are studying it. The first-mover that builds the actuarial model owns the category.</p>
+      </div>
+      <div class="callout callout-warn">
+        <div class="callout-eye">The Abundance Economy</div>
+        <p>If Elon's "universal high income" thesis is correct — and robots create so much economic output that humans have more leisure time and income — the indirect beneficiaries are entertainment, travel, health, and education. Netflix, Disney, cruise lines, fitness companies, and higher education all benefit from a world where humans have more discretionary time and money. Longest-dated and most speculative tail. Real if the thesis plays out over 20+ years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 10: PHYSICAL AI SUPPLY CHAIN -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="supplychain">
+  <div class="sec-eye">Section 10</div>
+  <h2 class="sec-title">The Physical AI Supply Chain — Brand-Agnostic Infrastructure</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">Don't bet on which robot wins — bet on what every robot needs</div>
+    <p>The previous section mapped companies that benefit from Tesla and SpaceX specifically. This section makes a more powerful argument: <strong>the physical AI supply chain is brand-agnostic infrastructure.</strong> Whether Tesla, Figure, Apptronik, Unitree, Boston Dynamics, or a company that doesn't yet exist wins the robot wars, they all buy from the same actuator, reducer, screw, bearing, and sensor stack. Physical AI is also not just humanoids — it includes autonomous vehicles, drones, surgical systems, agricultural machines, Starfall capsules, and Starmind satellites. The components that serve the <em>entire spectrum</em> of embodied AI, not just the humanoid slice, have the largest and most defensible TAM.</p>
+    <p>The mispriced opportunity sits in components the market sizes against today's ~$5B robotics market, when the real demand function is the entire multi-decade physical-AI buildout across every manufacturer on Earth — terrestrial and orbital. Three layers stand out as under-modeled: <strong>roller screws (and the thread grinders that make them), precision bearings, and tactile sensors.</strong> This is the "sell picks and shovels in a gold rush" logic applied to the robotics revolution.</p>
+    <p><em>Framework and bottleneck analysis developed jointly by T. Malone and Claude (Anthropic), June 2026.</em></p>
+  </div>
+
+  <div class="callout" style="margin-bottom:28px;">
+    <div class="callout-eye">The Organizing Insight — "Jobs No Human or Humanoid Can Do"</div>
+    <p>A humanoid form factor is optimized for environments built for humans. But vast categories of physical AI work happen in environments hostile to <em>both</em> humans and humanoids: <strong>orbit and vacuum</strong> (Starfall, Starmind, in-space assembly), <strong>microscopic precision</strong> (semiconductor handling, surgery interiors, pharma synthesis), <strong>extreme environments</strong> (deep sea, reactor interiors, pipelines, furnaces), and <strong>continuous high-speed repetition</strong> (where mimicking a human body is the wrong design). This means physical AI is a <em>spectrum</em> of embodied systems — and the components serving the whole spectrum carry the largest, most durable TAM. It also explains why Starfall and Starmind matter to this thesis: they are physical AI for places no humanoid can go, built from hardened versions of the same supply chain.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:8px;">The Stack, Layer by Layer</h3>
+  <p class="prose" style="margin-bottom:20px;">Each layer below is ordered from most-recognized to least-mapped. The deeper you go, the more concentrated the supply and the more mispriced the TAM — because the market hasn't traced the bottleneck-behind-the-bottleneck.</p>
+
+  <div class="layer-band">
+    <div class="layer-num">01</div>
+    <div class="layer-content"><h4>Precision motion — actuators, motors, reducers (40–60% of BOM)</h4><p>Each humanoid needs 23–53 degrees of freedom; Optimus uses 28 structural actuators. Recurring names across every teardown: Maxon Motor (25–30% of precision DC motors), Harmonic Drive Systems / Tokyo:6324 (20–25% via strain-wave gearing), Kollmorgen. This layer is well-understood by the market — but Harmonic Drive remains the cleanest pure-play on the joint of every robot. Reducers come in harmonic, planetary, and cycloidal/RV types; Japan and Europe (Nabtesco, Harmonic Drive) lead the high end.</p></div>
+  </div>
+  <div class="layer-band">
+    <div class="layer-num">02</div>
+    <div class="layer-content"><h4>The hidden choke point — roller screws &amp; their thread grinders</h4><p>As robots move to higher payloads, linear joints shift from ball screws to <strong>planetary roller screws</strong> — and supply is tighter than reducers. Import dependence runs ~80%; GSA, Rollvis, and Ewellix (acquired by Schaeffler, 2022) hold 70%+ combined. The bottleneck-behind-the-bottleneck: the <strong>thread-grinding machine tools</strong> that make the screws are themselves a choke point and largely imported. Whoever supplies precision thread grinders has pricing power over the entire roller-screw industry — which gates every high-payload robot and linear actuator on Earth. This is two levels below where the market is looking. Watch: Hiwin (TW:2049), NSK (JP:6471), THK (JP:6481), SKF, Schaeffler.</p></div>
+  </div>
+  <div class="layer-band">
+    <div class="layer-num">03</div>
+    <div class="layer-content"><h4>Bearings — the "industrial gases" of robotics</h4><p>Every joint, actuator, and reducer rides on precision bearings (cross-roller, angular contact). Unglamorous, unavoidable, consumed by every unit from every manufacturer. The names: Timken (TKR), SKF, NSK, Schaeffler. Schaeffler signed three humanoid actuator partnerships in five months and expects up to 10% of group sales from new sectors including humanoid robotics by 2035 — a signal that a 70-year-old bearing incumbent sees robotics as a second act.</p></div>
+  </div>
+  <div class="layer-band">
+    <div class="layer-num">04</div>
+    <div class="layer-content"><h4>Dexterous hands &amp; tactile sensing — largest single cost, biggest capability gap</h4><p>Dexterous hands are <strong>31% of the bill of materials — the single largest cost component</strong> — and tactile sensing is the hurdle that gates everything beyond simple industrial tasks. A robot that can't feel can't do surgery, can't handle fragile goods, can't do delicate assembly. Tactile sensors are largely <strong>not produced at scale yet</strong>, so whoever industrializes them first captures greenfield TAM. Most leaders are private or academic today. This is the single most important "watch for the IPO" category in the entire supply chain.</p></div>
+  </div>
+  <div class="layer-band">
+    <div class="layer-num">05</div>
+    <div class="layer-content"><h4>The convergence layer — industrial automation incumbents get a second act</h4><p>Every robot needs a factory to be built in, and that factory is itself becoming a physical AI system. Rockwell, Emerson, Honeywell, Siemens, Schneider, ABB sell into <em>both</em> sides — they equip the robot factories AND their edge-inference / condition-monitoring products are physical AI in their own right. Emerson is already running AI-at-the-edge quality inspection with real-time, air-gapped inference on the factory floor. Lower-volatility way to play the theme than pure-play component makers.</p></div>
+  </div>
+  <div class="layer-band">
+    <div class="layer-num">06</div>
+    <div class="layer-content"><h4>The orbital bridge — radiation-hardened, vacuum-rated systems</h4><p>Starfall and Starmind are physical AI for places no human or humanoid can go. They need the same actuators, sensors, and compute as a terrestrial robot — but <strong>hardened</strong>: radiation-tolerant silicon, vacuum-rated motors, thermal management without convection. Suppliers who can produce space-grade versions of robot components serve a smaller-volume but vastly higher-margin slice. This is the connective tissue between the robotics thesis and the orbital thesis — and it is essentially unmapped TAM today.</p></div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Watch List — Investable Now vs. Watch for the IPO</h3>
+  <table>
+    <thead><tr><th>Layer</th><th>Names</th><th>Status</th><th>Why It's Mispriced</th></tr></thead>
+    <tbody>
+      <tr><td>Actuators / Reducers</td><td>Harmonic Drive (6324), Maxon (pvt), Nabtesco</td><td><span class="badge badge-gain">Investable</span></td><td>Sized vs. today's robot market; real demand is all embodied AI</td></tr>
+      <tr><td>Roller Screws</td><td>Hiwin (2049), NSK (6471), THK (6481), SKF, Schaeffler</td><td><span class="badge badge-gain">Investable</span></td><td>~80% import dependence; supply tighter than reducers</td></tr>
+      <tr><td>Thread Grinders (tooling)</td><td>Mostly private / specialized machine-tool makers</td><td><span class="badge badge-watch">Watch</span></td><td>The bottleneck behind the bottleneck — almost entirely unmodeled</td></tr>
+      <tr><td>Bearings</td><td>Timken (TKR), SKF, NSK, Schaeffler</td><td><span class="badge badge-gain">Investable</span></td><td>Consumed by every unit, every brand — picks and shovels</td></tr>
+      <tr><td>Tactile Sensors / Hands</td><td>Mostly private / academic spinouts</td><td><span class="badge badge-watch">Watch for IPO</span></td><td>31% of BOM; not produced at scale; greenfield TAM</td></tr>
+      <tr><td>Machine Vision</td><td>Cognex (CGNX), Keyence, Basler</td><td><span class="badge badge-gain">Investable</span></td><td>The eyes of every robot + every smart factory</td></tr>
+      <tr><td>Automation Incumbents</td><td>Rockwell (ROK), Emerson (EMR), Honeywell, Siemens, ABB</td><td><span class="badge badge-gain">Investable</span></td><td>Sell into both robot factories and edge physical-AI</td></tr>
+      <tr><td>Rare Earth Magnets</td><td>MP Materials (MP), Energy Fuels (UUUU)</td><td><span class="badge badge-gain">Investable</span></td><td>See Section 11 — the geopolitical spine of the whole stack</td></tr>
+      <tr><td>Space-Hardened Components</td><td>Emerging / largely unmapped</td><td><span class="badge badge-watch">Watch</span></td><td>Connects robotics to Starfall/Starmind; highest margin</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warn">
+    <div class="callout-eye">The Geopolitical Spine</div>
+    <p>Every layer routes back to the same chokehold. China dominates ~63% of key component manufacturing, controls ~90% of heavy rare earth processing, and holds ~77% of global battery capacity. Building Tesla's Optimus Gen 2 without Chinese suppliers would cost roughly <strong>three times as much</strong> — the BOM surging from ~$46,000 to ~$131,000. That 3x figure is the entire Western supply-chain investment thesis in one number. Either the West builds a domestic physical-AI supply chain at every layer — magnets, screws, bearings, sensors — or it accepts a robot army built on components an adversary can switch off. MP Materials is the magnet layer of that answer. The roller-screw, bearing, and tactile-sensor layers <em>do not yet have</em> their MP Materials equivalent. That absence is the opportunity. (Full geopolitical analysis in Section 11.)</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 11: GEOPOLITICAL RISK -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="geo">
+  <div class="sec-eye">Section 11</div>
+  <h2 class="sec-title">Geopolitical Risk — The China Constraint</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary</div>
+    <div class="exec-title">China demonstrated willingness to weaponize robot supply chains. It will do so again.</div>
+    <p>China controls 63-90% of the critical component supply chains for humanoid robots: rare earth magnet processing (90%), harmonic drive reducers (63%), servo motors (60%+), battery cells (70%). In April 2025, China restricted rare earth magnet exports — Ford halted production at its Chicago plant, Tesla's Optimus supply was disrupted, and magnet prices spiked globally. China normalized the restriction by June 2025 (exports surged 660%) after trade negotiations. This does not mean the risk is resolved. It means the leverage was demonstrated and China knows it works. <strong>A future restriction during heightened geopolitical tension is a near-certainty — the question is timing, not probability.</strong></p>
+    <p>Investment implication: MP Materials (MP) is not just an industrial minerals company. It is <strong>Western strategic infrastructure</strong> for the robot economy. The DoD has already taken an equity stake and provided a price floor via agreement. Apple, GM, and the US military are already customers. Tesla and SpaceX must solve this dependency or face a supply chain that their adversary can turn off. MP Materials is the only domestic solution at scale today.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">China's Component Control</h3>
+      <table>
+        <thead><tr><th>Component</th><th>China Share</th><th>Risk Level</th></tr></thead>
+        <tbody>
+          <tr><td>Rare earth magnet processing</td><td>90%</td><td><span class="badge badge-loss">Critical</span></td></tr>
+          <tr><td>Harmonic drive reducers</td><td>63%</td><td><span class="badge badge-loss">Critical</span></td></tr>
+          <tr><td>Servo motors</td><td>60%+</td><td><span class="badge badge-loss">High</span></td></tr>
+          <tr><td>Battery cells (robot)</td><td>70%</td><td><span class="badge badge-loss">High</span></td></tr>
+          <tr><td>Force/torque sensors</td><td>45%</td><td><span class="badge badge-watch">Medium</span></td></tr>
+          <tr><td>Linear actuator assembly</td><td>55%</td><td><span class="badge badge-watch">Medium</span></td></tr>
+          <tr><td>Humanoid robot patents (2020-25)</td><td>79%</td><td><span class="badge badge-watch">Monitor</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">The Western Response</h3>
+      <div class="callout callout-gain">
+        <div class="callout-eye">MP Materials — The Domestic Answer</div>
+        <p><strong>Mine-to-magnet integration:</strong> Only US company with the full chain — Mountain Pass mine (CA) → NdPr oxide processing → NdFeB magnet manufacturing (Fort Worth, TX).</p>
+        <p><strong>Confirmed customers:</strong> Apple ($500M partnership, July 2025), General Motors (ramping), US Department of War (strategic partnership + price floor agreement + equity warrant).</p>
+        <p><strong>10X Facility:</strong> New Texas facility under construction, funded by $200M+ in state/local incentives. Apple provided $32M prepayment for dedicated 3,000 MT/yr capacity expansion.</p>
+        <p><strong>Next customer:</strong> Tesla and SpaceX are conspicuously absent from MP's customer list. This gap closes when they sign. Expect an announcement within 12-18 months or face continued vulnerability to Chinese rare earth restriction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 12: INVESTMENT FRAMEWORK -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="framework">
+  <div class="sec-eye">Section 12</div>
+  <h2 class="sec-title">Investment Framework</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Executive Summary · Not Financial Advice</div>
+    <div class="exec-title">A structured framework for near, medium, and long-term positioning</div>
+    <p>This framework organizes the investment thesis across three time horizons. Near-term positions are tied to specific, time-bounded catalysts in the ecosystem. Medium-term positions are anchored to company milestones directly within the TSLA/SPCX thesis. Long-term positions are secular bets on the physical intelligence infrastructure thesis playing out over a decade or more. None of this constitutes investment advice — this is a family office research document for debate with licensed advisors. Entry price, position sizing, and tax context are individual decisions that require advisor input.</p>
+    <p>Each position in this table is directly connected to the SpaceX or Tesla thesis — either as a core platform bet, an infrastructure beneficiary, or a component supplier that captures value regardless of which robot platform ultimately wins.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Horizon</th><th>Name</th><th>Catalyst / Trigger</th><th>Thesis</th><th>Key Risk</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-gain">3-5 yr</span></td><td><strong>MP Materials (MP)</strong></td><td>Tesla/SpaceX supply deal announcement</td><td>Only US integrated mine-to-magnet company. China demonstrated willingness to restrict rare earth exports (April 2025). DoD partner. Apple + GM contracted. Tesla and SpaceX must solve this dependency domestically — MP is the only answer at scale. Priced as an industrial minerals company; should be priced as strategic national infrastructure.</td><td>China normalizes trade relations; urgency for domestic alternative fades</td></tr>
+      <tr><td><span class="badge badge-gain">3-5 yr</span></td><td><strong>ASML</strong></td><td>Terafab equipment order flow (2027-28)</td><td>Only EUV lithography supplier on Earth. No Terafab, no advanced Intel node, no competing fab operates without ASML machines (~$400M each). CEO confirmed direct discussions with Musk. Benefits before Terafab produces its first chip — equipment paid upfront. True monopoly with no substitute technology.</td><td>Terafab timeline slips; Intel partnership fails to materialize at scale</td></tr>
+      <tr><td><span class="badge badge-gain">3-5 yr</span></td><td><strong>Applied Materials / Lam Research / KLA</strong></td><td>Terafab buildout (2027-28 equipment cycle)</td><td>~$25-30B in wafer fabrication equipment demand expected at Terafab over 2027-28, per analyst estimates. These three names capture deposition, etch, and process control — required at every step of chip manufacturing. Certain revenue stream that flows before any chip is produced.</td><td>Terafab construction delays push equipment orders to 2029+</td></tr>
+      <tr><td><span class="badge badge-gain">2-4 yr</span></td><td><strong>Vistra (VST) / Constellation (CEG)</strong></td><td>Terafab power supply agreement</td><td>Terafab requires 10+ gigawatts with no announced power contract. Texas geography favors Vistra; nuclear reliability favors Constellation. A long-term power purchase agreement — expected within 6-12 months — re-rates whichever name wins the contract. Industrial gas duopoly (Linde / Air Products) benefits similarly as permanent Terafab suppliers once operational.</td><td>Deal awarded to an unlisted counterparty; contract terms are not public</td></tr>
+      <tr><td><span class="badge badge-gain">2-5 yr</span></td><td><strong>Nucor Steel (NUE)</strong></td><td>Terafab + Gigabay construction cycle</td><td>Largest domestic steel producer. Terafab (100M sq meters) + two Gigabays (Florida + Texas) + Starfactory expansion = one of the largest simultaneous construction programs in US history. Structural steel demand from these projects is direct and near-term. Domestic sourcing preference given geopolitical environment adds further tailwind.</td><td>Construction delays; steel imports compete on price</td></tr>
+      <tr><td><span class="badge badge-gain">3-5 yr</span></td><td><strong>NVIDIA (NVDA)</strong></td><td>xAI $300B capex commitment through Terafab production era</td><td>xAI is a confirmed "NVDA house" — no plans to develop internal AI chips until Terafab produces its own. $300B in planned AI capex over the rest of the decade flows through NVIDIA hardware before SpaceX achieves chip self-sufficiency (~2028-29). Also the dominant robot simulation platform (Isaac Sim) — benefits from all robot training regardless of platform.</td><td>Terafab ahead of schedule; xAI switches sooner than expected</td></tr>
+      <tr><td><span class="badge badge-gain">5-10 yr</span></td><td><strong>Tesla (TSLA)</strong></td><td>Optimus commercial deployment; Cybercab volume production</td><td>Physical AI application layer. Actual earnings. $2B SpaceX equity stake. Co-builder of Terafab. Merger optionality. At lower valuation premium than SPCX with meaningful embedded exposure to the same infrastructure thesis. First external Optimus customer deployments are the proof-of-concept milestone the market needs to re-rate.</td><td>Optimus delays; FSD regulatory setbacks; Musk attention divided</td></tr>
+      <tr><td><span class="badge badge-gain">10-20 yr</span></td><td><strong>SpaceX (SPCX)</strong></td><td>Orbital compute scale; Terafab chip production; Starship V3 deployment</td><td>Orbital infrastructure monopoly for physical intelligence. 80% of global mass to orbit. 75% of all maneuverable satellites. The only entity building solar-powered orbital AI data centers. Terafab as chip self-sufficiency. $80B+ in committed compute revenue (Anthropic + Google + Reflection) through 2029 — ~$27.8B annualized — already running. High valuation risk at 94x revenue; structural moat is genuinely unique.</td><td>Execution risk on orbital compute; valuation prices perfection; Grok competitive position weakens if all compute is rented out</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warn">
+    <div class="callout-eye">Position Sizing Note</div>
+    <p>Both TSLA and SPCX carry significant execution risk and elevated valuations. Neither is appropriate as a concentrated single position. The ecosystem positions (ASML, MP, AMAT/LRCX/KLAC, VST/CEG) offer more bounded upside but substantially more certain near-term revenue from the Terafab buildout — these are "picks and shovels" positions that get paid before the platform thesis plays out. A balanced approach captures both the certain near-term infrastructure spend and the longer-duration platform bet. We are not financial advisors; these conclusions are for debate with your licensed investment advisors.</p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Risks &amp; Mitigants Matrix</h3>
+  <p class="prose" style="margin-bottom:16px;font-size:13px;color:#374151;"><em>Recommended addition by Grok (xAI) final review, June 2026 — risks were previously scattered throughout the document. This matrix consolidates them into a decision-ready format.</em></p>
+  <table>
+    <thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigant</th><th>Monitoring Trigger</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Terafab execution slippage</strong><br><span style="font-size:11px;color:#6b7280;">Semiconductor manufacturing is brutally hard; Intel partnership is a "general framework," not a binding commitment</span></td><td><span class="badge badge-watch">Medium</span></td><td><span class="badge badge-loss">High</span></td><td>ASML/AMAT/Lam equipment orders still generate revenue regardless of fab success; cascade model preserves NVIDIA GPU value</td><td>Intel 18A/14A yield rates; ASML order confirmations; first wafer timeline updates</td></tr>
+      <tr><td><strong>Musk attention dilution</strong><br><span style="font-size:11px;color:#6b7280;">Tesla, SpaceX, xAI, Neuralink, Boring, X, government advisory roles — all competing for one person's judgment</span></td><td><span class="badge badge-loss">High</span></td><td><span class="badge badge-loss">High</span></td><td>Dual-class structure means Musk retains control; key deputies elevated at each company; TSLA position has board governance Tesla SPCX lacks</td><td>Watch public statements on priorities; any Musk health or governmental role escalation</td></tr>
+      <tr><td><strong>Orbital regulatory &amp; debris hurdles</strong><br><span style="font-size:11px;color:#6b7280;">1 million Starmind satellites requires ITU spectrum coordination, orbital slot allocation, national regulatory approval globally</span></td><td><span class="badge badge-watch">Medium</span></td><td><span class="badge badge-watch">Medium-High</span></td><td>SpaceX has strongest existing regulatory relationships in LEO; existing Starlink precedent helps; phased build starts small (2 prototypes in 2027)</td><td>FCC and ITU coordination filings; international reactions to Starmind FCC filing</td></tr>
+      <tr><td><strong>China supply chain weaponization</strong><br><span style="font-size:11px;color:#6b7280;">63-90% control of robot components; April 2025 restriction already executed</span></td><td><span class="badge badge-loss">High</span></td><td><span class="badge badge-loss">High</span></td><td>MP Materials building domestic magnet capacity; DoD prioritizing rare earth independence; Tesla/SpaceX supply agreement expected</td><td>Any Chinese export control announcements; MP Materials revenue; Tesla supply chain disclosures</td></tr>
+      <tr><td><strong>Terrestrial compute competition</strong><br><span style="font-size:11px;color:#6b7280;">Google, Microsoft, Amazon aggressively scaling terrestrial data centers; may close orbital cost advantage window</span></td><td><span class="badge badge-watch">Medium</span></td><td><span class="badge badge-watch">Medium</span></td><td>Power/cooling physics favor orbit at scale; no terrestrial competitor controls launch to place their own orbital compute; Starmind moat deepens with scale</td><td>Hyperscaler capex guidance; data center power costs; orbital compute cost disclosures (2027+)</td></tr>
+      <tr><td><strong>Grok / xAI competitive position</strong><br><span style="font-size:11px;color:#6b7280;">Grok ARR &lt;$1B vs Anthropic's $40B+ run rate; 60% app download decline Jan-Apr 2026</span></td><td><span class="badge badge-loss">High</span></td><td><span class="badge badge-watch">Medium</span></td><td>Cursor acquisition ($2.6B ARR) bypasses need to win frontier model race; compute rental revenue doesn't depend on Grok's model quality; Terafab chips eventually reduce NVIDIA dependency</td><td>Cursor customer retention post-acquisition; Grok enterprise win rate; compute reclaim timing</td></tr>
+      <tr><td><strong>SPCX valuation (94x revenue)</strong><br><span style="font-size:11px;color:#6b7280;">Price perfection in for technologies still at prototype/demo stage; lockup supply pressure builds through 2026-2027</span></td><td><span class="badge badge-watch">Medium</span></td><td><span class="badge badge-watch">Medium</span></td><td>TSLA at lower premium captures same thesis with margin of safety; ecosystem positions (ASML, MP, NUE) not subject to same multiple risk</td><td>SPCX lockup tranche events (see Section 3 schedule); quarterly earnings vs analyst consensus</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:var(--serif);font-size:1.2rem;margin:28px 0 14px;">Scenario Sensitivity — Bull / Base / Bear</h3>
+  <p class="prose" style="margin-bottom:16px;font-size:13px;color:#374151;"><em>Directional ranges on key assumptions through 2030. Not price targets — scenario framing for internal calibration.</em></p>
+  <table>
+    <thead><tr><th>Assumption</th><th>Bear Case</th><th>Base Case</th><th>Bull Case</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Optimus units deployed (2030)</strong></td><td>&lt;100K — regulatory friction, manufacturing delays, battery/actuator supply constraints</td><td>500K–1M — Fremont + Giga Texas ramping, first external customers by 2027</td><td>5M+ — manufacturing scales faster than expected; "universal high income" narrative accelerates adoption</td></tr>
+      <tr><td><strong>Starmind orbital compute (2028)</strong></td><td>Prototypes only; commercial scale 2030+ — regulatory, radiation hardening, and launch cadence delays</td><td>1–5 GW operational — prototype 2027, limited commercial 2028, meaningful scale 2029</td><td>10+ GW — Starship cadence enables mass deployment; orbital becomes cheaper than terrestrial by 2028 as Musk projected</td></tr>
+      <tr><td><strong>% of $22.7T captured by 2035</strong></td><td>0.5–2% ($115B–$454B) — execution delays across all platforms; competition from terrestrial players</td><td>3–6% ($680B–$1.4T) — Optimus at scale + Starmind commercial + Cursor/Grok enterprise positioned</td><td>10–15% ($2.3T–$3.4T) — hardware moat is decisive; Terafab chips eliminate NVIDIA dependency; orbital compute achieves cost parity by 2029</td></tr>
+      <tr><td><strong>Terafab first wafer production</strong></td><td>2031+ — Intel yield issues, equipment delays, regulatory permitting</td><td>2028–2029 — Intel 18A partnership executes; ASML equipment on order 2027</td><td>2027 — prototype fab at Giga Texas ahead of schedule; D3 chip in Starmind satellites</td></tr>
+      <tr><td><strong>TSLA 5-yr return vs S&amp;P (to 2031)</strong></td><td>Underperforms — FSD fails to scale commercially; Optimus delayed; EV margin pressure persists</td><td>Outperforms 1.5–2× — Cybercab launches, Optimus enters commercial deployment, energy division continues 50%+ growth</td><td>Outperforms 3–5× — Optimus becomes the dominant physical AI platform; TSLA-SPCX merger creates $5T+ entity</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION 13: PREDICTIONS TRACKER -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="predictions">
+  <div class="sec-eye">Section 13</div>
+  <h2 class="sec-title">Predictions Tracker — Living Document</h2>
+  <hr class="sec-divider">
+
+  <div class="exec">
+    <div class="exec-eye">Framework · Status as of June 25, 2026</div>
+    <div class="exec-title">How to use this section</div>
+    <p>This section records specific, falsifiable predictions with confidence levels and target dates. Each 90-day review should: (1) score predictions against outcomes, (2) update theses where evidence has changed, (3) add new predictions based on new information. The goal is calibration — tracking whether our confidence levels are appropriately set and correcting our analytical biases over time. Predictions marked <span class="badge badge-gain">High</span> reflect 70%+ conviction. <span class="badge badge-watch">Medium</span> is 50-70%. <span class="badge badge-loss">Low</span> is below 50% — directional bets, not core positions.</p>
+    <p><em>Credit: This prediction framework and initial predictions developed jointly by T. Malone and Claude (Anthropic) · June 2026. Catalyst watchlist structure recommended by Grok (xAI) final review.</em></p>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Near-Term Catalyst Watchlist (Next 90 Days)</h3>
+  <div class="two-col" style="margin-bottom:24px;">
+    <div>
+      <div class="callout callout-gain">
+        <div class="callout-eye">Must Watch — High Conviction Catalysts</div>
+        <p><strong>Terafab power contract:</strong> SpaceX announces a long-term power supply agreement for the Gibbons Creek facility. Without it, construction timeline is at risk. Vistra (VST) or Constellation (CEG) most likely counterparties. Expected within 60-90 days.</p>
+        <p><strong>Q3 2026 earnings (Oct/Nov):</strong> First earnings report to include compute allocation commentary — will Musk signal compute reclamation? Will Grok metrics improve post-Cursor? This is the single most information-dense event in the 90-day window.</p>
+        <p><strong>MP Materials / Tesla-SpaceX magnet deal:</strong> Tesla and SpaceX are conspicuously absent from MP's customer list. A supply agreement announcement closes the most critical domestic supply chain gap for Optimus. Expected before end of 2026.</p>
+      </div>
+    </div>
+    <div>
+      <div class="callout callout-warn">
+        <div class="callout-eye">Monitor Closely — Thesis-Relevant Events</div>
+        <p><strong>Cursor customer retention (Q3):</strong> First data on whether enterprise Cursor customers stay post-acquisition into a Grok-first product. Defections would validate the neutrality concern. Retention would prove the platform thesis.</p>
+        <p><strong>Next Starfall / Starmind demo:</strong> Any update on the June 23 demo results, commercial customer conversations, or AI1 prototype build progress. Timing of first paying commercial Starfall mission.</p>
+        <p><strong>SPCX Q2 earnings unlock (late July):</strong> First lockup tranche event. Watch for insider selling volume — heavy selling signals lower insider conviction; restrained selling (or none) strengthens the long-term commitment signal.</p>
+        <p><strong>Grok / xAI differentiation:</strong> Monitor enterprise wins in regulated verticals (legal, medical, financial). Grok's "truth-seeking, anti-ideological-capture" positioning is a potential enterprise moat where competitors' safety/alignment constraints limit utility. Any enterprise win announcement here validates the differentiation.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.15rem;margin-bottom:14px;">Near-Term (by December 2026)</h3>
+  <div class="pred-grid">
+    <div class="pred-row"><div><div class="pred-label">Observation · June 23, 2026 — Material Update</div><div class="pred-thesis"><strong>Reflection AI signed as SpaceX's third major compute customer.</strong> $150M/month, July 2026–2029, ~$6.3B total. Combined contracted compute revenue now exceeds $80B through 2029 at ~$2.32B/month. This is bridge financing — not a business pivot. SpaceX built 555,000 GPUs for Grok, Grok's downloads fell 60% in 3 months and its ARR is below $1B. Musk turned idle hardware into $80B in revenue to fund Terafab and Starship while the long-term thesis develops. Every contract has a 90-day exit clause SpaceX controls. Wall Street is wrong to model this as permanent.</div></div><div><span class="pred-conf conf-high">Confirmed</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · Q2 2027 (Updated Framing)</div><div class="pred-thesis"><strong>SpaceX begins invoking 90-day compute termination clauses.</strong> After December 31, 2026, all three contracts allow SpaceX to exit with 90 days notice. The likely trigger: Cursor's integration with Grok generates enough internal inference demand that reclaiming compute is more valuable than renting it. Terafab prototype fab output beginning in 2028 eliminates the NVIDIA training dependency. The cascade model means reclaimed H100/GB200 GPUs still generate substantial value for inference. Watch for any Musk comment or filing suggesting compute repatriation — it will precede an announcement by 90 days.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Watch Point · Q3 2026 (Reframed)</div><div class="pred-thesis"><strong>Where does Grok train while Colossus is rented?</strong> Both facilities are substantially committed to external customers. The answer is either: (a) undisclosed new infrastructure is coming online, (b) training runs have been paused in favor of rental revenue, or (c) Cursor's Q3 2026 close eliminates the need to win the frontier model race — Cursor already has 4M developers and $2.6B ARR regardless of which underlying model wins. Option (c) is the most strategically interesting and least discussed. Monitor Q3 earnings call commentary on AI segment compute allocation.</div></div><div><span class="pred-conf conf-med">Monitor</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · Q3 2026</div><div class="pred-thesis">SpaceX announces a long-term power supply agreement with a Texas-based generator (most likely Vistra) for Terafab Phase 1. Without a power contract, Terafab's construction timeline is untenable.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · Q3-Q4 2026</div><div class="pred-thesis">SpaceX makes a second major acquisition using IPO stock currency — either in industrial deployment, computer vision, or power infrastructure. The Cursor deal was the template. The M&A pace accelerates.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · Q4 2026</div><div class="pred-thesis">Tesla ships Optimus Gen 3 units to first external (non-Tesla factory) customer. This is the proof point the market is waiting for — internal deployment is not commercially meaningful; external customer deployment triggers multiple expansion.</div></div><div><span class="pred-conf conf-med">Medium</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · Q4 2026</div><div class="pred-thesis">MP Materials signs a supply agreement with Tesla and/or SpaceX for NdFeB magnets. The Chinese restriction of April 2025 made this an existential supply chain risk for Optimus. The contract comes within 18 months of that restriction.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.15rem;margin:24px 0 14px;">Medium-Term (2027-2028)</h3>
+  <div class="pred-grid">
+    <div class="pred-row"><div><div class="pred-label">Prediction · Early 2027</div><div class="pred-thesis"><strong>SpaceX launches the first two prototype Starmind (AI1) orbital data center satellites.</strong> The commercial viability of orbital compute becomes the most-discussed topic in AI infrastructure. Estimates of terrestrial vs. orbital cost-competitiveness are revised significantly. If Musk's "lowest-cost location for AI compute within 2–3 years" claim holds, this reframes the entire data-center capex debate — and validates the bridge-financing thesis that terrestrial Colossus rentals were always temporary.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2027-2028</div><div class="pred-thesis"><strong>Starfall demonstrates commercial in-space manufacturing with a paying customer.</strong> Following the June 23, 2026 demo flight, SpaceX signs its first commercial microgravity manufacturing contract — most likely pharmaceutical (protein crystallization) or specialty fiber optics (ZBLAN). This is the proof point that the in-space manufacturing TAM is real rather than theoretical. Competitors (Varda, Outpost) validate the category; SpaceX's launch-cost advantage lets it scale fastest.</div></div><div><span class="pred-conf conf-med">Medium</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2027-28</div><div class="pred-thesis">ASML, Applied Materials, Lam Research, and KLA collectively receive $15-25B in Terafab equipment orders. These companies re-rate on the order flow regardless of Terafab's ultimate success. The equipment gets paid for whether the fab works or not.</div></div><div><span class="pred-conf conf-high">High</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2028</div><div class="pred-thesis">China restricts rare earth exports again, this time with higher severity than April 2025. The combination of Terafab (making China's semiconductor leverage less effective) and Optimus (making China's labor advantage less relevant) motivates a harder geopolitical response in the rare earth supply chain.</div></div><div><span class="pred-conf conf-med">Medium</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2027-28</div><div class="pred-thesis">The first "Robot as a Service" company with meaningful revenue ($100M+ ARR) emerges, either as a startup or an existing company pivoting. This is the "Uber moment" for physical intelligence. When it happens, the market will re-price the entire robot economy.</div></div><div><span class="pred-conf conf-med">Medium</span></div></div>
+  </div>
+
+  <h3 style="font-family:var(--serif);font-size:1.15rem;margin:24px 0 14px;">Long-Term (2029-2035)</h3>
+  <div class="pred-grid">
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2030</div><div class="pred-thesis">SpaceX achieves $1 trillion in revenue (as Musk publicly stated on June 14, 2026). If correct, this represents 53x growth from 2025 revenue in 5 years — extraordinary but mathematically possible if orbital compute, Terafab, and Starlink V3 all execute on their stated roadmaps.</div></div><div><span class="pred-conf conf-low">Low</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2030</div><div class="pred-thesis">SpaceX acquires Tesla (or Tesla merges into SpaceX). The operational integration is already deep: $2B equity stake, shared Terafab, shared Mars mission using Optimus. The logical endpoint is a single public entity. At current relative valuations, Tesla holders benefit most from the transaction.</div></div><div><span class="pred-conf conf-med">Medium</span></div></div>
+    <div class="pred-row"><div><div class="pred-label">Prediction · 2028-32</div><div class="pred-thesis">A company that doesn't currently exist, or is currently too small to be visible, becomes a $50B+ business as the first-mover "killer application" for Optimus in a specific vertical (elder care, agricultural automation, or construction). This is the Uber of physical intelligence — it will be obvious in retrospect and invisible until it happens.</div></div><div><span class="pred-conf conf-high">High (that it happens)</span></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SOURCES -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section id="sources">
+  <div class="sec-eye">Section 14</div>
+  <h2 class="sec-title">Sources &amp; Attribution</h2>
+  <hr class="sec-divider">
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.1rem;margin-bottom:14px;">Primary Sources</h3>
+      <ul class="source-list">
+        <li><span>SpaceX Form S-1 (May 20, 2026) and Amendments S-1/A (June 1, June 3, 2026) · <em>SEC EDGAR</em></span></li>
+        <li><span>SpaceX Form S-1/A: Cursor acquisition disclosure (June 16, 2026) · <em>SEC EDGAR</em></span></li>
+        <li><span>Tesla Q1 2026 10-Q: SpaceX equity stake disclosure · <em>SEC EDGAR</em></span></li>
+        <li><span>Tesla Q4 2024 &amp; Q3 2025 Earnings Calls: Optimus roadmap · <em>Tesla IR</em></span></li>
+        <li><span>MP Materials Q4 2025 &amp; Q1 2026 Earnings: Mine-to-magnet milestones · <em>MP Materials IR</em></span></li>
+        <li><span>SpaceX Updates: Gigabay and Starship construction milestones · <em>SpaceX.com</em></span></li>
+        <li><span>Terafab property tax abatement filing, Grimes County TX (May 2026) · <em>Public county record</em></span></li>
+        <li><span>MP Materials + Apple $500M rare earth partnership (July 15, 2025) · <em>MP Materials Form 8-K</em></span></li>
+        <li><span>Elon Musk X post: "Neuralink will start high-volume production" (December 31, 2025) · <em>X (@elonmusk)</em></span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-family:var(--serif);font-size:1.1rem;margin-bottom:14px;">Research &amp; Analysis</h3>
+      <ul class="source-list">
+        <li><span>CNBC: "SpaceX to acquire the AI coding startup Cursor for $60 billion" (June 16, 2026)</span></li>
+        <li><span>Tom's Hardware: "SpaceX files for $55 billion semiconductor fab in rural Texas" (May 6, 2026)</span></li>
+        <li><span>Via Satellite: "SpaceX's IPO Filing Gives First Look Into Company's Financials" (May 20, 2026)</span></li>
+        <li><span>Fortune: "SpaceX IPO targets $28.5 trillion total addressable market" (May 20, 2026)</span></li>
+        <li><span>SemiAnalysis: "To Boldly Go: The Case for Space Datacenters" (June 2026)</span></li>
+        <li><span>OptimuskBlog: "Tesla Optimus Hardware: Actuators, Hands &amp; Sensors" (2026)</span></li>
+        <li><span>OptimuskBlog: "Tesla Optimus Supply Chain: Who Makes the Parts?" (2026)</span></li>
+        <li><span>EE Times: "Intel Enters Pact With Tesla and SpaceX for Terafab" (April 9, 2026)</span></li>
+        <li><span>Lynx Research: SPCX "gravitational pull" beneficiaries note (via Investing.com, June 2026)</span></li>
+        <li><span>Rare Earth Exchange: Automobile Supply Chain and Rare Earth Magnets analysis (June 2026)</span></li>
+        <li><span>The Washington Post: "Musk races to build a robot army at Tesla" (March 27, 2026)</span></li>
+        <li><span>Fortune: "SpaceX Just Revealed Its Finances: Is It a Warning Sign?" — Grok ARR vs Anthropic ARR analysis (May 2026)</span></li>
+        <li><span>Fortune: "Elon Musk called Anthropic evil 3 months ago. Now he's taking $4 billion to become its landlord" (May 7, 2026)</span></li>
+        <li><span>CoreWeave CEO Michael Intrator: A100 chips "fully booked"; H100s rebook at 95% of original pricing · via CNBC and Seeking Alpha (2025-26)</span></li>
+        <li><span>WhiteFiber: "Understanding GPU Lifecycle" — GPU value cascade model (training → inference → batch) (2026)</span></li>
+        <li><span>MLQ News: "SpaceX Signs $6.3B Compute Deal With Reflection AI for Colossus Data Center" (June 22, 2026)</span></li>
+        <li><span>Gizmodo: "Forget Mars, SpaceX Is Becoming a Data Center Company" (June 22, 2026)</span></li>
+        <li><span>WCCFTech: "SpaceX Rented Out Colossus 1 Over Its 'Mish-Mash' of GPUs, But Now It's Renting Out Colossus 2 Capacity As Well" (June 22, 2026)</span></li>
+        <li><span>TechCrunch: "Google will pay SpaceX $920M per month for compute" (June 5, 2026)</span></li>
+        <li><span>Teslarati: "SpaceX confirms third massive compute deal at Colossus data center" (June 23, 2026)</span></li>
+        <li><span>Space.com: "What is Starfall? A look at SpaceX's mysterious new return capsule" (June 23, 2026)</span></li>
+        <li><span>Teslarati: "SpaceX's newest Starmind will make earth data centers obsolete" + Starfall demo coverage (June 22–24, 2026)</span></li>
+        <li><span>SpaceNews / Space.com: SpaceX FCC filing for up to 1 million Starmind AI satellites (filed January 30, 2026; name confirmed by Musk June 24, 2026)</span></li>
+        <li><span>FAA Final Environmental Assessment &amp; Record of Decision: Starfall reentry test flights (May 2026)</span></li>
+        <li><span>Morgan Stanley: "The Humanoid 100 — Mapping the Humanoid Robot Value Chain" (2025)</span></li>
+        <li><span>McKinsey: "Turning humanoid supply-chain constraints into billion-dollar wins" (April 17, 2026) and "Humanoid robots: Crossing the chasm" (October 2025)</span></li>
+        <li><span>IDTechEx: "Humanoid Robots 2026-2036: Technologies, Markets, and Opportunities" — component-level BOM analysis</span></li>
+        <li><span>Gerra: "The Global Humanoid Robot Supply Chain: Architecture, Economics, and Strategic Implications" (June 2025)</span></li>
+        <li><span>Emerson / Rockwell Automation: edge-AI quality inspection and predictive-maintenance disclosures (2026)</span></li>
+        <li><span>SpaceX 424B4 Final Prospectus (June 12, 2026, SEC accession 0001628280-26-042639) — Lockup schedule: Underwriting section pp. 265-272 and Shares Eligible for Future Sale pp. 258-259</span></li>
+        <li><span>StockAlarm Pro: "SpaceX SPCX Lock-Up Expiration Dates: Employee Stock Release Schedule 2026" (June 2026) · stockalarm.io</span></li>
+        <li><span>Investing.com: "SpaceX Lockup Countdown: When Shares May Become Safer to Buy" (June 23, 2026)</span></li>
+        <li><span>PurePowerPicks: "SpaceX (SPCX) Lockup Schedule: When Insider Shares Unlock (2026-2027)" (June 18, 2026)</span></li>
+        <li><span>Motley Fool: "SpaceX Lockup Expiration: Will Insider Selling Sink the Stock?" (June 23, 2026)</span></li>
+        <li><span>Darrow Wealth Management: "SpaceX IPO: Employee Lockup Release Dates" (June 2026)</span></li>
+        <li><span>Grok (xAI): Independent analysis of the $22.7T "enterprise applications" TAM — first-principles reconstruction using S-1 language, Elon public statements, and cross-portfolio pattern matching. June 2026. Archived as grok_report.pdf, grok_report-2.pdf, grok_report-3.pdf.</span></li>
+        <li><span>Grok (xAI): Final review and assessment of the completed document — "a high-quality, defensible document among the best syntheses I've seen on this topic." Recommended additions: Risks &amp; Mitigants Matrix, Scenario Sensitivity Table, Catalysts Watchlist, and xAI/Grok differentiation sharpening. June 25, 2026. Archived as grok_report-4.pdf (final review).</span></li>
+      </ul>
+      <h3 style="font-family:var(--serif);font-size:1.1rem;margin:20px 0 12px;">Original Analysis Attribution</h3>
+      <div class="callout">
+        <div class="callout-eye">Research Credit &amp; Attribution</div>
+        <p>The physical intelligence platform thesis, the breadcrumb analysis connecting Elon's companies into a unified system, the critique of the original $22.7T TAM framing, the bridge-financing interpretation of the Colossus compute rentals, the rare earth magnet investment thesis, the iPhone ecosystem parallel, the integration of the Starfall and Starmind reveals into the platform thesis, and the brand-agnostic physical-AI supply-chain framework (including the roller-screw / thread-grinder and tactile-sensor bottleneck analysis) were developed through iterative debate between <strong>Tom Malone, CPA, Managing Partner, Aureus Family Office</strong> and <strong>Claude (Anthropic, claude-sonnet-4-6)</strong> in June 2026.</p>
+        <p>The independent TAM breakdown of the $22.7T "enterprise applications" line into weighted sub-buckets (robot coordination 40–50%, human augmentation 15–20%, orbital enterprise 15–20%, autonomous operations 10–15%), the Tesla Energy foundational layer insight, the Mars flywheel framing, the X Platform data flywheel role, and the monetization mechanics critique are credited to <strong>Grok (xAI)</strong>, whose independent first-principles analysis was solicited in June 2026 and found ~80–85% alignment with this document's conclusions. Grok's responses are archived in the companion PDF reports (grok_report.pdf, grok_report-2.pdf, grok_report-3.pdf).</p>
+        <p>Financial data, company statistics, and recent news are sourced from public disclosures cited above. This document is a first draft and living research piece — not investment advice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end .page -->
+
+<footer>
+  <p><strong>Aureus Family Office, LLC</strong> · Allentown, Pennsylvania</p>
+  <p>Tom Malone, CPA | Managing Partner</p>
+  <p style="margin-top:12px;">Version 1.0 · June 2026 · Next Planned Review: September 2026</p>
+  <p style="margin-top:8px;font-size:11px;max-width:700px;margin-left:auto;margin-right:auto;">This document is for informational and discussion purposes only. Nothing herein constitutes investment advice, a solicitation, or a recommendation to buy or sell any security. All investment decisions should be made in consultation with your licensed financial advisors. Past performance is not indicative of future results. The analysis and predictions contained herein represent the authors' views at the time of publication and are subject to change without notice.</p>
+  <p style="margin-top:16px;"><a href="#exec" style="color:var(--gold);">Back to top ↑</a></p>
+</footer>
+
+<script>
+function toggleAccord(btn) {
+  const body = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
