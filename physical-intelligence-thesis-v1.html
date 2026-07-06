@@ -166,13 +166,16 @@ sup{font-size:10px;color:var(--gold);font-weight:600;}
 
 /* ── ACCORDION ── */
 .accord{margin-bottom:8px;}
+details.accord{margin-bottom:8px;}
+details.accord summary{list-style:none;cursor:pointer;}
+details.accord summary::-webkit-details-marker{display:none;}
 .accord-btn{width:100%;background:none;border:1px solid var(--gold-rule);border-radius:6px;padding:14px 18px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--navy);transition:background 0.15s;}
 .accord-btn:hover{background:var(--cream);}
-.accord-btn.open{background:var(--cream);border-bottom-left-radius:0;border-bottom-right-radius:0;}
+details.accord[open] > .accord-btn{background:var(--cream);border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .accord-icon{font-size:18px;color:var(--gold);transition:transform 0.2s;}
-.accord-btn.open .accord-icon{transform:rotate(45deg);}
+details.accord[open] .accord-icon{transform:rotate(45deg);}
 .accord-body{display:none;border:1px solid var(--gold-rule);border-top:none;border-radius:0 0 6px 6px;padding:18px 20px;background:var(--cream);}
-.accord-body.open{display:block;}
+details.accord[open] .accord-body{display:block;}
 .accord-body p{font-size:13px;color:#374151;line-height:1.7;margin-bottom:10px;}
 .accord-body p:last-child{margin-bottom:0;}
 
@@ -293,26 +296,26 @@ footer strong{color:var(--cream);}
   <div class="two-col">
     <div>
       <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;color:var(--navy);">The Breadcrumbs Across Companies</h3>
-      <div class="accord">
-        <button class="accord-btn">Tesla <span style="color:var(--cream-dim);font-weight:400;">→ Physical labor automation</span><span class="accord-icon">+</span></button>
+      <details class="accord">
+        <summary class="accord-btn">Tesla <span style="color:var(--cream-dim);font-weight:400;">→ Physical labor automation</span><span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Optimus is Elon's stated #1 priority — "the largest product opportunity in history." He ended Model S/X production to convert Fremont into a robot factory targeting 1 million units/year. At $20-30K per robot replacing $35-50K/year in human labor, the economics are immediate. The robot is the product; SpaceX is the brain that runs it.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">Neuralink <span style="color:var(--cream-dim);font-weight:400;">→ Human cognitive augmentation</span><span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">Neuralink <span style="color:var(--cream-dim);font-weight:400;">→ Human cognitive augmentation</span><span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>High-volume BCI production scaling in 2026. Long-term goal: human-AI symbiosis — not to serve AI, but to keep humans cognitively competitive with AI. Each Neuralink user generates continuous neural data requiring real-time AI inference via orbital compute connected via Starlink. The enterprise application: every knowledge worker pays a monthly subscription for augmented cognition.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">The Boring Company <span style="color:var(--cream-dim);font-weight:400;">→ Physical logistics layer</span><span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">The Boring Company <span style="color:var(--cream-dim);font-weight:400;">→ Physical logistics layer</span><span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Underground tunnels are the last-mile delivery system for a robot-operated world. Robots operating above ground are expensive, congested, weather-dependent. Underground through Boring Company tunnels, they operate in a controlled, three-dimensional grid. SpaceX coordinates it from orbit. The Boring Company executes it underground.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">xAI + Grok + X <span style="color:var(--cream-dim);font-weight:400;">→ Truth-seeking intelligence layer</span><span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">xAI + Grok + X <span style="color:var(--cream-dim);font-weight:400;">→ Truth-seeking intelligence layer</span><span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Elon explicitly designed Grok as a "maximally truth-seeking" AI — anti-establishment, anti-ideological-capture. X provides real-time global information feed. Together they form the intelligence layer that every robot and augmented human queries. The enterprise application: every AI interaction with Grok generates revenue; every X transaction fee is a toll on information.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">SpaceX + Starlink <span style="color:var(--cream-dim);font-weight:400;">→ Central nervous system</span><span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">SpaceX + Starlink <span style="color:var(--cream-dim);font-weight:400;">→ Central nervous system</span><span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>9,600 active satellites. 75% of all maneuverable satellites globally. V3 satellites launching H2 2026 with 20x bandwidth increase. Orbital data centers (AI1) beginning prototype launch 2027. Terafab chip manufacturing in Texas. This is not an internet service company — it is the orbital infrastructure layer that makes physical intelligence planetary in scale.</p></div>
-      </div>
+      </details>
     </div>
     <div>
       <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:16px;color:var(--navy);">The Unified Theory</h3>
@@ -366,22 +369,22 @@ footer strong{color:var(--cream);}
     </div>
     <div>
       <h4 style="font-family:var(--serif);font-size:1.05rem;margin-bottom:12px;color:var(--navy);">What Grok Identified as Missing</h4>
-      <div class="accord">
-        <button class="accord-btn">Tesla Energy as Foundational Layer <span class="accord-icon">+</span></button>
+      <details class="accord">
+        <summary class="accord-btn">Tesla Energy as Foundational Layer <span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Grok noted that Tesla's solar and Megapack energy business is under-weighted in most analyses. It is not a parallel business — it is the <strong>enabling substrate</strong>. Cheap, abundant energy is a prerequisite for robot labor abundance and orbital compute economics. The "universal high income" thesis rests on energy + intelligence + physical labor all becoming cheap simultaneously. Tesla Energy is the power foundation for everything terrestrial, including Terafab, Gigabay operations, and Starlink ground stations. To put this in scale: Tesla Energy deployed <strong>8.8 GWh in Q1 2026 alone</strong> at 39.5% gross margins — on a trajectory exceeding 30+ GWh annually. Terafab alone requires 10+ GW of power. Tesla's energy storage infrastructure, growing 50%+ year-over-year, is simultaneously the most profitable Tesla division and the enabling power layer for the physical intelligence buildout.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">The Mars Flywheel <span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">The Mars Flywheel <span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>SpaceX's explicit core mission is making life multiplanetary. Grok noted that robot labor — specifically Optimus fleets — is <strong>the only plausible way to rapidly build and sustain a self-sufficient Mars presence</strong>. Orbital compute (Starmind) provides the coordination layer; Starlink provides communications. The robot economy on Earth funds and accelerates the Mars mission, and the Mars mission validates and stress-tests the robot economy. This civilizational flywheel is central to Elon's stated motivations but gets less weight than the Earth robot-economy angle in most investment analyses.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">X Platform's Role — Data Flywheel <span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">X Platform's Role — Data Flywheel <span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Grok identified X as significantly under-played. X is not just a social app — it is a <strong>real-time data flywheel for AI training</strong>, a distribution channel for Grok, and the "public square" for coordinating human meaning in an abundance world. Elon has commented on the meaning problem: once material scarcity is solved by robots, humans face the harder question of purpose. X is positioned as the platform for human coordination and meaning in that post-scarcity world.</p></div>
-      </div>
-      <div class="accord">
-        <button class="accord-btn">Monetization Mechanics — The Missing Plumbing <span class="accord-icon">+</span></button>
+      </details>
+      <details class="accord">
+        <summary class="accord-btn">Monetization Mechanics — The Missing Plumbing <span class="accord-icon">+</span></summary>
         <div class="accord-body"><p>Grok noted the analysis correctly identifies the intelligence/coordination toll layer but is lighter on how the toll is actually captured at scale: per-robot monthly intelligence subscriptions? per-Neuralink user cognitive augmentation fee? per-inference charges? platform take rate on a future robot app store? A mix? The document identifies the layer; Grok suggests the next refinement is modeling specific unit economics for each monetization pathway. Likely answer: a mix of subscription (fleet-level), inference-per-query, and platform take rates — similar to AWS's blended model.</p></div>
-      </div>
+      </details>
     </div>
   </div>
 
