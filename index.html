@@ -638,6 +638,55 @@
       .hero { padding: 8rem 1.5rem 5rem; }
     }
 
+
+    /* ============================================
+       MARK  — circular seal
+    ============================================ */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      color: inherit;
+    }
+    .nav-mark {
+      width: 42px;
+      height: 42px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    .hero-watermark {
+      position: absolute;
+      left: 50%;
+      top: 44%;
+      transform: translate(-50%, -54%);
+      width: min(26rem, 62vw);
+      height: min(26rem, 62vw);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.20;
+    }
+    .hero-watermark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-mark {
+      width: 40px;
+      height: 40px;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-scroll-line { animation: none; }
       * { transition-duration: 0.01ms !important; }
@@ -650,7 +699,10 @@
      NAVIGATION
 ============================================ -->
 <nav aria-label="Main navigation">
-  <div class="nav-logo"><em>Aureus</em> Family Office</div>
+  <a href="/" class="nav-left" aria-label="Aureus Family Office">
+    <img class="nav-mark" src="aureus-mark.png" width="42" height="42" alt="">
+    <div class="nav-logo"><em>Aureus</em> Family Office</div>
+  </a>
   <div class="nav-right">
     <a href="#services" class="nav-link">Services</a>
     <a href="#principles" class="nav-link">Principles</a>
@@ -666,6 +718,9 @@
 ============================================ -->
 <section class="hero" aria-label="Introduction">
   <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-watermark" aria-hidden="true">
+    <img src="aureus-mark.png" alt="" width="480" height="480">
+  </div>
   <div class="hero-inner">
     <p class="hero-eyebrow">Lehigh Valley, Pennsylvania</p>
     <h1 class="hero-wordmark"><em>Aureus</em></h1>
@@ -857,7 +912,10 @@
   <div class="footer-grid">
 
     <div>
-      <p class="footer-brand">Aureus Family Office, LLC</p>
+      <div class="footer-brand-row">
+        <img class="footer-mark" src="aureus-mark.png" width="40" height="40" alt="">
+        <p class="footer-brand">Aureus Family Office, LLC</p>
+      </div>
       <p class="footer-tagline">Serving families that desire privacy</p>
     </div>
 
@@ -874,7 +932,7 @@
 
   <div class="footer-disclosure-band">
     <p class="footer-col-label">Disclosure</p>
-    <p class="footer-disclaimer">Aureus Family Office, LLC is a consulting firm; it is not a law firm and does not provide legal or investment advisory services. Neither Aureus nor Thomas Malone is registered as an investment adviser with the U.S. Securities and Exchange Commission under the Investment Advisers Act of 1940, as amended (15 U.S.C. § 80b-1 et seq.), or with any state securities regulator, including the Commonwealth of Pennsylvania under the Pennsylvania Securities Act of 1972, as amended (70 P.S. § 1-101 et seq.), and Aureus does not hold itself out to the public as an investment adviser. Thomas Malone is a licensed Certified Public Accountant; any incidental discussion of a private investment a client is independently considering is incidental to the tax and accounting services he provides in that professional capacity, is reasonably related to the tax and estate-planning consequences of the matter, and is not separately compensated, falling within applicable exclusions from the definition of "investment adviser," including the professional exclusion under Section 202(a)(11)(B) of the Investment Advisers Act (15 U.S.C. § 80b-2(a)(11)(B)) and Section 102(j)(ii) of the Pennsylvania Securities Act (70 P.S. § 1-102(j)(ii)). Any such discussion does not constitute advice as to the value or advisability of investing in any security; any investment decision is the client’s own, made independently and without reliance on Aureus. Clients are encouraged to consult a registered investment adviser or broker-dealer regarding the merits of any investment.</p>
+    <p class="footer-disclaimer">Neither Aureus nor Thomas Malone is registered as an investment adviser with the U.S. Securities and Exchange Commission under the Investment Advisers Act of 1940, as amended (15 U.S.C. § 80b-1 et seq.), or with any state securities regulator, including the Commonwealth of Pennsylvania under the Pennsylvania Securities Act of 1972, as amended (70 P.S. § 1-101 et seq.). Aureus does not hold itself out to the public as an investment adviser. The tax, accounting, and estate planning services described in this engagement, together with any incidental discussion of a specific private investment opportunity that Client is independently considering, fall within the exclusion from the definition of "investment adviser" available to accountants under Section 202(a)(11)(B) of the Investment Advisers Act of 1940 (15 U.S.C. § 80b-2(a)(11)(B)) and the corresponding exclusion under Section 102(j)(ii) of the Pennsylvania Securities Act of 1972 (70 P.S. § 1-102(j)(ii)), because any such discussion is solely incidental to the professional services described herein, is reasonably related to the tax and estate planning consequences of the matter under discussion, and is not separately compensated. Any such discussion does not constitute advice as to the value of, or the advisability of investing in, purchasing, or selling, any security, and any decision by Client to invest in any private investment or security discussed with Aureus is Client's own decision, made independently and without reliance on Aureus as an investment adviser. Client is encouraged to consult with a registered investment adviser, broker-dealer, or other qualified professional with respect to the merits of any specific investment. This engagement letter does not include any scope of work that could be construed to imply that Aureus or Thomas Malone is engaged in the business of providing investment advisory services, or that either is registered or required to be registered as an investment adviser under federal or state law.</p>
   </div>
 
   <div class="footer-bottom">
